@@ -19,7 +19,7 @@
 {mytemplate inc_header}
 <div class="bodybgcolor">
 <div class="body1000">
-    <div id="ad_header"></div>
+    <div id="bm_header"></div>
 	<div class="clearfix"></div>
 	<div class="wrapper">
         <div class="focushead">
@@ -168,7 +168,7 @@
         {php $i=1;}
         <!--{loop $index_cat $fcat}-->
         <!--{if $i < $tpl_index[classic][cats]}-->
-        {if $i%2 != 0}<div id="ad_indexcatad_{$fcat[catid]}"></div>{/if}
+        {if $i%2 != 0}<div id="bm_indexcatad_{$fcat[catid]}"></div>{/if}
         <div class="showbox {if $i%2 != 0}sleft{else}sright{/if}">
             <div class="hd">
                 <div class="cattitle">{if $fcat[icon]}<img alt="{$fcat[catname]}" src="{$mymps_global[SiteUrl]}{$fcat[icon]}" align="absmiddle"/>&nbsp;&nbsp;{/if}{$fcat[catname]}信息</div>
@@ -187,7 +187,7 @@
                 </ul>
             </div>
         </div>
-        {if $i%2 == 0}<div id="ad_indexcatad_{$fcat[catid]}"></div>{/if}
+        {if $i%2 == 0}<div id="bm_indexcatad_{$fcat[catid]}"></div>{/if}
         <!--{/if}-->
         {php $i++;}
         <!--{/loop}-->

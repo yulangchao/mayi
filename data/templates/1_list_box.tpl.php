@@ -38,7 +38,7 @@
 </div>
 <div class="clear"></div>
 <!--顶部横幅广告开始-->
-<div id="ad_topbanner"></div>
+<div id="bm_topbanner"></div>
 <!--顶部横幅广告结束-->
 <div class="clearfix"></div>
 <div class="logosearchtel">
@@ -102,7 +102,7 @@
     </div>
 </div>
 <div class="clearfix"></div>
-<div id="ad_header"></div>
+<div id="bm_header"></div>
 <div class="clearfix"></div>
 <?php } else { ?>
 <div class="body1000">
@@ -136,7 +136,7 @@
     </div>
 </div>
 <div class="clearfix"></div>
-<div id="ad_header"></div>
+<div id="bm_header"></div>
 <div class="clearfix"></div>
 <script>loadDefault(['category','category_select'])</script>
 <?php } ?><div class="bodybgcolor">
@@ -227,11 +227,11 @@
         <? if($advertisement['type']['intercatad']) { ?>
         	<style>.list_box ul div{width:205px;}</style>
         <?php } ?>
-<div id="ad_intercatdiv"></div>
+<div id="bm_intercatdiv"></div>
 <div class="infolists">
 <div class="list_box">
 <!--栏目列表页头部广告开始-->
-<div id="ad_interlistad_top"></div>
+<div id="bm_interlistad_top"></div>
 <!--栏目列表页头部广告结束-->
 <ul>
                 <?php $i=1; ?><?php if(is_array($info_list)){foreach($info_list as $mymps) { ?><div class="hover <? if($mymps['upgrade_type']>1) { ?>ding<?php } ?> <? if($i%4==0) { ?>nomr<?php } ?>">
@@ -255,7 +255,7 @@
 </ul>
                 <div class="clearfix"></div>
 <!--栏目列表页尾部广告开始-->
-<div id="ad_interlistad_bottom"></div>
+<div id="bm_interlistad_bottom"></div>
 <!--栏目列表页尾部广告结束-->
 </div>
 <div class="clear"></div>
@@ -310,7 +310,7 @@
     </div>
     <?php } ?>
 </div>
-<script type="text/javascript" src="<?=$mymps_global['SiteUrl']?>/template/default/js/hover_bg.js"></script><div id="ad_footerbanner"></div>
+<script type="text/javascript" src="<?=$mymps_global['SiteUrl']?>/template/default/js/hover_bg.js"></script><div id="bm_footerbanner"></div>
 <? if($advertisement['type']['floatad'] || $advertisement['type']['couplead']) { ?>
 <div align="left"  style="clear: both;">
 <script src="<?=$mymps_global['SiteUrl']?>/template/global/floatadv.js" type="text/javascript"></script>
@@ -325,33 +325,33 @@
 <?php } ?>
 </div>
 <?php } ?>
-<div style="display: none" id="ad_none">
+<div style="display: none" id="bm_none">
 <? if($advertisement['type']['headerbanner']) { ?>
-<div class="header" id="ad_header_none"><?php $countheaderbanner = count($advertisement['type']['headerbanner']);$i=1; ?><?php if(is_array($advertisement['type']['headerbanner'])){foreach($advertisement['type']['headerbanner'] as $mymps) { if($adveritems[$mymps]) { ?><div class="headerbanner" <? if($countheaderbanner == $i) { ?>style="margin-right:0;"<?php } ?>><?=$adveritems[$mymps]?></div><?php } ?><?php $i=$i+1; ?><?php }} ?>
+<div class="header" id="bm_header_none"><?php $countheaderbanner = count($advertisement['type']['headerbanner']);$i=1; ?><?php if(is_array($advertisement['type']['headerbanner'])){foreach($advertisement['type']['headerbanner'] as $mymps) { if($adveritems[$mymps]) { ?><div class="headerbanner" <? if($countheaderbanner == $i) { ?>style="margin-right:0;"<?php } ?>><?=$adveritems[$mymps]?></div><?php } ?><?php $i=$i+1; ?><?php }} ?>
 </div>
-<?php } ?><?php if(is_array($advertisement['type']['indexcatad'])){foreach($advertisement['type']['indexcatad'] as $k => $mymps) { ?><div class="indexcatad" id="ad_indexcatad_<?=$k?>_none"><?=$adveritems[$mymps['0']]?></div>
+<?php } ?><?php if(is_array($advertisement['type']['indexcatad'])){foreach($advertisement['type']['indexcatad'] as $k => $mymps) { ?><div class="indexcatad" id="bm_indexcatad_<?=$k?>_none"><?=$adveritems[$mymps['0']]?></div>
 <?php }} if($advertisement['type']['interlistad']['top']) { ?>
-<div id="ad_interlistad_top_none">
+<div id="bm_interlistad_top_none">
 <ul class="interlistdiv"><?php if(is_array($advertisement['type']['interlistad']['top'])){foreach($advertisement['type']['interlistad']['top'] as $mymps) { if($adveritems[$mymps]) { ?><li class="hover"><?=$adveritems[$mymps]?></li><?php } ?>
 <?php }} ?>
 </ul>
 </div>
 <?php } if($advertisement['type']['interlistad']['bottom']) { ?>
-<div id="ad_interlistad_bottom_none">
+<div id="bm_interlistad_bottom_none">
 <ul class="interlistdiv"><?php if(is_array($advertisement['type']['interlistad']['bottom'])){foreach($advertisement['type']['interlistad']['bottom'] as $mymps) { if($adveritems[$mymps]) { ?><li class="hover"><?=$adveritems[$mymps]?></li><?php } ?>
 <?php }} ?>
 </ul>
 </div>
 <?php } if($advertisement['type']['intercatad']) { ?>
-<div class="intercatdiv" id="ad_intercatdiv_none"><?php if(is_array($advertisement['type']['intercatad'])){foreach($advertisement['type']['intercatad'] as $mymps) { ?><div class="intercatad"><?=$adveritems[$mymps]?></div>
+<div class="intercatdiv" id="bm_intercatdiv_none"><?php if(is_array($advertisement['type']['intercatad'])){foreach($advertisement['type']['intercatad'] as $mymps) { ?><div class="intercatad"><?=$adveritems[$mymps]?></div>
 <?php }} ?>
 </div>
 <?php } if($advertisement['type']['topbanner']) { ?>
-<div class="topbanner" id="ad_topbanner_none"><?php if(is_array($advertisement['type']['topbanner'])){foreach($advertisement['type']['topbanner'] as $mymps) { ?><div class="topbannerad"><?=$adveritems[$mymps]?></div>
+<div class="topbanner" id="bm_topbanner_none"><?php if(is_array($advertisement['type']['topbanner'])){foreach($advertisement['type']['topbanner'] as $mymps) { ?><div class="topbannerad"><?=$adveritems[$mymps]?></div>
 <?php }} ?>
 </div>
 <?php } if($advertisement['type']['footerbanner']) { ?>
-<div class="footerbanner" id="ad_footerbanner_none"><?php if(is_array($advertisement['type']['footerbanner'])){foreach($advertisement['type']['footerbanner'] as $mymps) { ?><div class="footerbannerad"><?=$adveritems[$mymps]?></div>
+<div class="footerbanner" id="bm_footerbanner_none"><?php if(is_array($advertisement['type']['footerbanner'])){foreach($advertisement['type']['footerbanner'] as $mymps) { ?><div class="footerbannerad"><?=$adveritems[$mymps]?></div>
 <?php }} ?>
 </div>
 <?php } ?>
