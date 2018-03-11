@@ -37,7 +37,7 @@
 </div>
 <div class="clear"></div>
 <!--顶部横幅广告开始-->
-<div id="ad_topbanner"></div>
+<div id="bm_topbanner"></div>
 <!--顶部横幅广告结束-->
 <div class="clearfix"></div>
 <div class="logosearchtel">
@@ -91,7 +91,7 @@
 </div>
 <div class="clear"></div><div class="bodybgcolor">
 <div class="body1000">
-    <div id="ad_header"></div>
+    <div id="bm_header"></div>
 <div class="clearfix"></div>
 <div class="wrapper">
         <div class="focushead">
@@ -224,7 +224,7 @@
         <div class="clearfix"></div>
 <div class="infolist">
         <?php $i=1; ?>        <?php if(is_array($index_cat)){foreach($index_cat as $fcat) { ?>        <? if($i < $tpl_index['classic']['cats']) { ?>
-        <? if($i%2 != 0) { ?><div id="ad_indexcatad_<?=$fcat['catid']?>"></div><?php } ?>
+        <? if($i%2 != 0) { ?><div id="bm_indexcatad_<?=$fcat['catid']?>"></div><?php } ?>
         <div class="showbox <? if($i%2 != 0) { ?>sleft<?php } else { ?>sright<?php } ?>">
             <div class="hd">
                 <div class="cattitle"><? if($fcat['icon']) { ?><img alt="<?=$fcat['catname']?>" src="<?=$mymps_global['SiteUrl']?><?=$fcat['icon']?>" align="absmiddle"/>&nbsp;&nbsp;<?php } ?><?=$fcat['catname']?>信息</div>
@@ -242,7 +242,7 @@
                 </ul>
             </div>
         </div>
-        <? if($i%2 == 0) { ?><div id="ad_indexcatad_<?=$fcat['catid']?>"></div><?php } ?>
+        <? if($i%2 == 0) { ?><div id="bm_indexcatad_<?=$fcat['catid']?>"></div><?php } ?>
         <?php } ?>
         <?php $i++; ?>        <?php }} ?>
 </div><?php if(ifplugin('goods')){$goods = mymps_get_goods($tpl_index['goods'],1,NULL,NULL,NULL,NULL,$cityid); ?>        <div class="clearfix"></div>
@@ -316,7 +316,7 @@
         </div>
         </div>
 </div>
-<div class="clear"></div><div id="ad_footerbanner"></div>
+<div class="clear"></div><div id="bm_footerbanner"></div>
 <? if($advertisement['type']['floatad'] || $advertisement['type']['couplead']) { ?>
 <div align="left"  style="clear: both;">
 <script src="<?=$mymps_global['SiteUrl']?>/template/global/floatadv.js" type="text/javascript"></script>
@@ -331,33 +331,33 @@
 <?php } ?>
 </div>
 <?php } ?>
-<div style="display: none" id="ad_none">
+<div style="display: none" id="bm_none">
 <? if($advertisement['type']['headerbanner']) { ?>
-<div class="header" id="ad_header_none"><?php $countheaderbanner = count($advertisement['type']['headerbanner']);$i=1; ?><?php if(is_array($advertisement['type']['headerbanner'])){foreach($advertisement['type']['headerbanner'] as $mymps) { if($adveritems[$mymps]) { ?><div class="headerbanner" <? if($countheaderbanner == $i) { ?>style="margin-right:0;"<?php } ?>><?=$adveritems[$mymps]?></div><?php } ?><?php $i=$i+1; ?><?php }} ?>
+<div class="header" id="bm_header_none"><?php $countheaderbanner = count($advertisement['type']['headerbanner']);$i=1; ?><?php if(is_array($advertisement['type']['headerbanner'])){foreach($advertisement['type']['headerbanner'] as $mymps) { if($adveritems[$mymps]) { ?><div class="headerbanner" <? if($countheaderbanner == $i) { ?>style="margin-right:0;"<?php } ?>><?=$adveritems[$mymps]?></div><?php } ?><?php $i=$i+1; ?><?php }} ?>
 </div>
-<?php } ?><?php if(is_array($advertisement['type']['indexcatad'])){foreach($advertisement['type']['indexcatad'] as $k => $mymps) { ?><div class="indexcatad" id="ad_indexcatad_<?=$k?>_none"><?=$adveritems[$mymps['0']]?></div>
+<?php } ?><?php if(is_array($advertisement['type']['indexcatad'])){foreach($advertisement['type']['indexcatad'] as $k => $mymps) { ?><div class="indexcatad" id="bm_indexcatad_<?=$k?>_none"><?=$adveritems[$mymps['0']]?></div>
 <?php }} if($advertisement['type']['interlistad']['top']) { ?>
-<div id="ad_interlistad_top_none">
+<div id="bm_interlistad_top_none">
 <ul class="interlistdiv"><?php if(is_array($advertisement['type']['interlistad']['top'])){foreach($advertisement['type']['interlistad']['top'] as $mymps) { if($adveritems[$mymps]) { ?><li class="hover"><?=$adveritems[$mymps]?></li><?php } ?>
 <?php }} ?>
 </ul>
 </div>
 <?php } if($advertisement['type']['interlistad']['bottom']) { ?>
-<div id="ad_interlistad_bottom_none">
+<div id="bm_interlistad_bottom_none">
 <ul class="interlistdiv"><?php if(is_array($advertisement['type']['interlistad']['bottom'])){foreach($advertisement['type']['interlistad']['bottom'] as $mymps) { if($adveritems[$mymps]) { ?><li class="hover"><?=$adveritems[$mymps]?></li><?php } ?>
 <?php }} ?>
 </ul>
 </div>
 <?php } if($advertisement['type']['intercatad']) { ?>
-<div class="intercatdiv" id="ad_intercatdiv_none"><?php if(is_array($advertisement['type']['intercatad'])){foreach($advertisement['type']['intercatad'] as $mymps) { ?><div class="intercatad"><?=$adveritems[$mymps]?></div>
+<div class="intercatdiv" id="bm_intercatdiv_none"><?php if(is_array($advertisement['type']['intercatad'])){foreach($advertisement['type']['intercatad'] as $mymps) { ?><div class="intercatad"><?=$adveritems[$mymps]?></div>
 <?php }} ?>
 </div>
 <?php } if($advertisement['type']['topbanner']) { ?>
-<div class="topbanner" id="ad_topbanner_none"><?php if(is_array($advertisement['type']['topbanner'])){foreach($advertisement['type']['topbanner'] as $mymps) { ?><div class="topbannerad"><?=$adveritems[$mymps]?></div>
+<div class="topbanner" id="bm_topbanner_none"><?php if(is_array($advertisement['type']['topbanner'])){foreach($advertisement['type']['topbanner'] as $mymps) { ?><div class="topbannerad"><?=$adveritems[$mymps]?></div>
 <?php }} ?>
 </div>
 <?php } if($advertisement['type']['footerbanner']) { ?>
-<div class="footerbanner" id="ad_footerbanner_none"><?php if(is_array($advertisement['type']['footerbanner'])){foreach($advertisement['type']['footerbanner'] as $mymps) { ?><div class="footerbannerad"><?=$adveritems[$mymps]?></div>
+<div class="footerbanner" id="bm_footerbanner_none"><?php if(is_array($advertisement['type']['footerbanner'])){foreach($advertisement['type']['footerbanner'] as $mymps) { ?><div class="footerbannerad"><?=$adveritems[$mymps]?></div>
 <?php }} ?>
 </div>
 <?php } ?>

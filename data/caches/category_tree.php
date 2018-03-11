@@ -350,16 +350,6 @@ $data = array (
         'uri' => 'category.php?catid=28',
         'usecoin' => '0',
       ),
-      29 => 
-      array (
-        'catid' => '29',
-        'catname' => '货车/工程车',
-        'if_view' => '2',
-        'color' => '',
-        'dir_typename' => 'huoche',
-        'uri' => 'category.php?catid=29',
-        'usecoin' => '0',
-      ),
       30 => 
       array (
         'catid' => '30',
@@ -368,26 +358,6 @@ $data = array (
         'color' => '',
         'dir_typename' => 'keche',
         'uri' => 'category.php?catid=30',
-        'usecoin' => '0',
-      ),
-      31 => 
-      array (
-        'catid' => '31',
-        'catname' => '拖拉机/收割机',
-        'if_view' => '2',
-        'color' => '',
-        'dir_typename' => 'tuolaji',
-        'uri' => 'category.php?catid=31',
-        'usecoin' => '0',
-      ),
-      32 => 
-      array (
-        'catid' => '32',
-        'catname' => '拼车/顺风车',
-        'if_view' => '2',
-        'color' => '',
-        'dir_typename' => 'pinche',
-        'uri' => 'category.php?catid=32',
         'usecoin' => '0',
       ),
       33 => 
@@ -430,26 +400,6 @@ $data = array (
         'uri' => 'category.php?catid=36',
         'usecoin' => '0',
       ),
-      37 => 
-      array (
-        'catid' => '37',
-        'catname' => '摩托车/燃气车',
-        'if_view' => '2',
-        'color' => '',
-        'dir_typename' => 'motuoche',
-        'uri' => 'category.php?catid=37',
-        'usecoin' => '0',
-      ),
-      38 => 
-      array (
-        'catid' => '38',
-        'catname' => '电动车',
-        'if_view' => '2',
-        'color' => '',
-        'dir_typename' => 'diandongche',
-        'uri' => 'category.php?catid=38',
-        'usecoin' => '0',
-      ),
       39 => 
       array (
         'catid' => '39',
@@ -458,16 +408,6 @@ $data = array (
         'color' => '',
         'dir_typename' => 'zixingche',
         'uri' => 'category.php?catid=39',
-        'usecoin' => '0',
-      ),
-      40 => 
-      array (
-        'catid' => '40',
-        'catname' => '本地下线车',
-        'if_view' => '2',
-        'color' => '',
-        'dir_typename' => 'xiaxianche',
-        'uri' => 'category.php?catid=40',
         'usecoin' => '0',
       ),
     ),
