@@ -5,7 +5,7 @@ var myOptions = {
 	mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
 	navigationControl: true,
 	mapTypeId: google.maps.MapTypeId.ROADMAP,
-	center: new google.maps.LatLng('30.2448','120.1519')
+	center: new google.maps.LatLng('49.28','-123.12')
 }
 
 function init_map() {
