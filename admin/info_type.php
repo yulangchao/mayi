@@ -181,7 +181,7 @@ else if ($part == 'option_type') {
 	case 'del':
 		empty($id) && write_msg('您还没有选定编号');
 		$mymps_del = mymps_delete('info_typeoptions', 'WHERE optionid = \'' . $id . '\'');
-		write_msg('字段模型分类' . $id . '删除成功！', '?part=option_type', 'WWW.MYMPS.COM.CN');
+		write_msg('字段模型分类' . $id . '删除成功！', '?part=option_type', 'beimei.online');
 		break;
 
 	default:

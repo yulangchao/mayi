@@ -11,7 +11,7 @@
 	<div class="wrapC">
 	  <div id="header">
 		<div class="logo left"><img src="template/images/install-logo.jpg" /></div>
-		<div class="right"> <a href="http://bbs.mymps.com.cn" target="_blank" class="linkA">官方论坛</a> | <a href="http://www.mymps.com.cn" target="_blank" class="linkA">使用手册</a></div>
+		<div class="right"> <a href="http://bbs.mymps.com.cn" target="_blank" class="linkA">官方论坛</a> | <a href="http://beimei.online" target="_blank" class="linkA">使用手册</a></div>
 	  </div>
       <div id="main">
         <h2><span class="step"><?php echo $step; ?></span> <?php echo $info;?></h2>

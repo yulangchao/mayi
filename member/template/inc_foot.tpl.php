@@ -8,7 +8,7 @@
             <?php echo $mymps_global['SiteUrl']; ?> All Rights Reserved. <a rel="nofollow" href="http://www.miibeian.gov.cn/"><?php echo $mymps_global['SiteBeian']?></a>
         </p>
         <p style="display:none;">
-        	Powered by <a href="http://www.mymps.com.cn" target="_blank">mymps</a>
+        	Powered by <a href="http://beimei.online" target="_blank">mymps</a>
         </p>
     </div>
 </div>

@@ -1,6 +1,6 @@
 <? if(!defined('IN_MYMPS')) exit('Access Denied');
 /*Mymps分类信息系统
-官方网站：http://www.mymps.com.cn*/?><?php $navigation = get_mobile_nav(); if($navigation) { ?>
+官方网站：http://beimei.online*/?><?php $navigation = get_mobile_nav(); if($navigation) { ?>
 <div class="select_01" id="wrapper2">
     <ul class="tab-hd" id="scroller2">
         <?php if(is_array($navigation)){foreach($navigation as $mymps) { ?>        <li class="item <? if($mymps['flag'] == 'index') { ?>current<?php } ?>"><a style="color:<?=$mymps['color']?>;" target="<?=$mymps['target']?>" href="<?=$mymps['url']?>"><?=$mymps['title']?></a></li>

@@ -1,6 +1,6 @@
 <? if(!defined('IN_MYMPS')) exit('Access Denied');
 /*Mymps分类信息系统
-官方网站：http://www.mymps.com.cn*/?>
+官方网站：http://beimei.online*/?>
 <div class="footer">
 <!--<p class="footer_01">
 <a href="index.php?mod=index" class="footer_hover" rel="nofollow">手机版</a>

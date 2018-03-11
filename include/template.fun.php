@@ -44,7 +44,7 @@ function myparseTemplate($tplfile, $templateid, $tpldir) {
 		$headeradd .=";";
 	}
 	
-	$template = "<? if(!defined('IN_MYMPS')) exit('Access Denied');\r\n/*Mymps分类信息系统\r\n官方网站：http://www.mymps.com.cn*/?>\r\n$template";
+	$template = "<? if(!defined('IN_MYMPS')) exit('Access Denied');\r\n/*Mymps分类信息系统\r\n官方网站：http://beimei.online*/?>\r\n$template";
 	
 	$template = preg_replace("/[\n\r\t]*\{mympstag_([a-z0-9_]+)\}[\n\r\t]*/is", "\n<?php echo custom('\\1'); ?>\n", $template);
 	$template = preg_replace("/[\n\r\t]*\{template\s+([a-z0-9_]+)\}[\n\r\t]*/is", "\n<?php include mymps_tpl('\\1'); ?>\n", $template);

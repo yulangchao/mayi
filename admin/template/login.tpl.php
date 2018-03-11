@@ -39,7 +39,7 @@
 		</form>
 	</div>
 	<div class="foot">
-		Powered by <a href="http://www.mymps.com.cn" target="_blank">Mymps</a> <?php echo MPS_VERSION; ?>
+		Powered by <a href="http://beimei.online" target="_blank">Mymps</a> <?php echo MPS_VERSION; ?>
 	</div>
 </body>
 </html>

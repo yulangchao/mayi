@@ -1,1 +1,1 @@
-$('#foots').html('Powered by <a class="copyrights" href="http://www.mymps.com.cn" target="_blank">mymps</a> <a class="copyversions" href="http://bbs.mymps.com.cn">5.8SE utf-8</a>');
+$('#foots').html('Powered by <a class="copyrights" href="http://beimei.online" target="_blank">mymps</a> <a class="copyversions" href="http://bbs.mymps.com.cn">5.8SE utf-8</a>');

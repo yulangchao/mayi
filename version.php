@@ -4,6 +4,6 @@
 define('MPS_SOFTNAME','mymps');
 define('MPS_VERSION','5.8SE UTF8');
 define('MPS_RELEASE','');
-define('MPS_WWW','http://www.mymps.com.cn');
+define('MPS_WWW','http://beimei.online');
 define('MPS_BBS','http://bbs.mymps.com.cn');
 ?>

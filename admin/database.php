@@ -340,7 +340,7 @@ if ( $part == "backup" )
 		}
 		if ( trim( $sqldump ) )
 		{
-			$sqldump = $idstring."# <?exit();?>\n".( "# Mymps Multi-Volume Data Dump Vol.".$volume."\n" ).( "# Version: Mymps ".$version."\n" ).( "# Time: ".$time."\n" ).( "# Type: ".$type."\n" ).( "# Table Prefix: ".$db_mymps."\n" )."#\n# Mymps Home: http://www.mymps.com.cn\n# Please visit our website for newest infomation about Mymps\n# --------------------------------------------------------\n\n\n".( $setnames."" ).$sqldump;
+			$sqldump = $idstring."# <?exit();?>\n".( "# Mymps Multi-Volume Data Dump Vol.".$volume."\n" ).( "# Version: Mymps ".$version."\n" ).( "# Time: ".$time."\n" ).( "# Type: ".$type."\n" ).( "# Table Prefix: ".$db_mymps."\n" )."#\n# Mymps Home: http://beimei.online\n# Please visit our website for newest infomation about Mymps\n# --------------------------------------------------------\n\n\n".( $setnames."" ).$sqldump;
 			$dumpfilename = sprintf( $dumpfile, $volume );
 			@$fp = @fopen( $dumpfilename, "wb" );
 			@flock( $fp, 2 );

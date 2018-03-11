@@ -1,6 +1,6 @@
 <? if(!defined('IN_MYMPS')) exit('Access Denied');
 /*Mymps分类信息系统
-官方网站：http://www.mymps.com.cn*/?>
+官方网站：http://beimei.online*/?>
 <script language="javascript">var current_domain = '<?=$mymps_global['SiteUrl']?>';</script>
 <script src="<?=$mymps_global['SiteUrl']?>/template/global/noerr.js" type="text/javascript"></script>
 <script src="<?=$mymps_global['SiteUrl']?>/template/spaces/store/js/common.js"></script>

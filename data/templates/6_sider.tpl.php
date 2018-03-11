@@ -1,6 +1,6 @@
 <? if(!defined('IN_MYMPS')) exit('Access Denied');
 /*Mymps分类信息系统
-官方网站：http://www.mymps.com.cn*/?>
+官方网站：http://beimei.online*/?>
 <div class="cleft"> 
 <div class="box"> 
 <div class="tit">机构档案</div> 

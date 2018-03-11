@@ -263,7 +263,7 @@ function mymps_admin_tpl_global_foot()
 	$mtime = explode(' ', microtime());
 	$totaltime = number_format(($mtime[1] + $mtime[0]) - $mymps_starttime, 6);
 	$sitedebug = 'Processed in ' . $totaltime . ' second(s) , ' . $db->query_num . ' queries';
-	echo '<div class="clear" style="height:10px"></div><div class="copyright">Powered by <a href="http://www.mymps.com.cn/" target="_blank"><b style="color:#0070af">mymps</b></a> <a href="http://bbs.mymps.com.cn/" target="_blank"><b style="color:#FF6600">' . MPS_VERSION . '</b></a> &copy; , ' . $sitedebug . ' <a href="javascript:scroll(0,0)" style="margin-left:10px;">至顶端↑</a></div></div></div></body></html>';
+	echo '<div class="clear" style="height:10px"></div><div class="copyright">Powered by <a href="http://beimei.online/" target="_blank"><b style="color:#0070af">mymps</b></a> <a href="http://bbs.mymps.com.cn/" target="_blank"><b style="color:#FF6600">' . MPS_VERSION . '</b></a> &copy; , ' . $sitedebug . ' <a href="javascript:scroll(0,0)" style="margin-left:10px;">至顶端↑</a></div></div></div></body></html>';
 }
 
 function FileImage($file)

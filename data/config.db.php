@@ -8,7 +8,7 @@ $dbcharset = "utf8";
 
 //数据库字符集编码
 
-$db_host    = "localhost";
+$db_host    = "beimei.online";
 
 //数据库服务器地址，一般为localhost
 

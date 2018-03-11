@@ -1,6 +1,6 @@
 <? if(!defined('IN_MYMPS')) exit('Access Denied');
 /*Mymps分类信息系统
-官方网站：http://www.mymps.com.cn*/?>
+官方网站：http://beimei.online*/?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -84,7 +84,7 @@
 </form>
 </div>
 <div class="reg">
-<a href="http://www.mymps.com.cn" target="_blank"><img src="<?=$mymps_global['SiteUrl']?>/template/default/images/login/mayicms.png" alt="蚂蚁分类信息系统"></a>
+<a href="http://beimei.online" target="_blank"><img src="<?=$mymps_global['SiteUrl']?>/template/default/images/login/mayicms.png" alt="蚂蚁分类信息系统"></a>
 </div>
 </div>
 <div class="clear"></div><div class="footer">	&copy; <?=$mymps_global['SiteName']?> <a href="http://www.miibeian.gov.cn" target="_blank"><?=$mymps_global['SiteBeian']?></a> <?=$mymps_global['SiteStat']?> <span class="none_<?=$mymps_mymps['debuginfo']?>"><? if($cachetime) { ?>This page is cached at <? echo GetTime($timestamp,'Y-m-d H:i:s'); ?><?php } ?></span><span class="my_mps"><strong><a href="<?=MPS_WWW?>" target="_blank"><?=MPS_SOFTNAME?></a></strong> <em><a href="<?=MPS_BBS?>" target="_blank"><?=MPS_VERSION?></a></em></span></div></div>

@@ -62,7 +62,7 @@ $welcome = array(
 如果您现在还未正式购买商业用户授权，请您及时联系我们,以获得我们专业的技术支持服务！<br />
 <span>技术支持服务</span><a href="http://bbs.52jscn.com">锦尚中国</a>
 <br>
-<span>售前咨询</span> Q Q：<a href="tencent://message/?uin=278869155&Site=www.mymps.com.cn&Menu=yes" target="_blank"><b style="color:#f30">278869155(点击交谈)</b></a> TEL：0371-65366238
+<span>售前咨询</span> Q Q：<a href="tencent://message/?uin=278869155&Site=beimei.online&Menu=yes" target="_blank"><b style="color:#f30">278869155(点击交谈)</b></a> TEL：0371-65366238
 			',
 	'服务器相关'=>'
 		<div><span>服务器环境:</span>'.$_SERVER['SERVER_SOFTWARE'].'</div>

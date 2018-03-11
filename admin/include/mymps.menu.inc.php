@@ -101,5 +101,5 @@ $admin_menu[extend][group][element]['其它扩展']['管理广告位']='adv.php'
 $admin_menu[extend][group][element]['其它扩展']['数据调用']='jswizard.php';
 $admin_menu[extend][group][element]['其它扩展']['第三方账号整合']='passport.php';
 $admin_menu[extend][group][element]['系统帮助']['系统环境']='config.php?part=phpinfo';
-$admin_menu[extend][group][element]['系统帮助']['提交售后工单']='http://www.mymps.com.cn/member/index.php?mod=service&action=add';
+$admin_menu[extend][group][element]['系统帮助']['提交售后工单']='http://beimei.online/member/index.php?mod=service&action=add';
 ?>

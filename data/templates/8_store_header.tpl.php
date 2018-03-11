@@ -1,6 +1,6 @@
 <? if(!defined('IN_MYMPS')) exit('Access Denied');
 /*Mymps分类信息系统
-官方网站：http://www.mymps.com.cn*/?>
+官方网站：http://beimei.online*/?>
 <? if($action == 'index' && $store['banner']) { ?><div class="gbanner" style='background-image:url("<?=$mymps_global['SiteUrl']?><?=$store['banner']?>")'></div><?php } ?>
 <div class="infobox">
     <div class="infoboximg"   pageTitle="商家相册">

@@ -687,7 +687,7 @@ function mymps_tpl($str,$curscript='')
 
 function unknown_err_msg()
 {
-	$msgs="未知错误，可能与你提交的参数有关<br /><br />获取更多帮助请前往<a href=http://www.mymps.com.cn target=_blank>Mymps官方网站</a>";
+	$msgs="未知错误，可能与你提交的参数有关<br /><br />获取更多帮助请前往<a href=http://beimei.online target=_blank>Mymps官方网站</a>";
 	write_msg($msgs,'olmsg');
 }
 /*text str html*/

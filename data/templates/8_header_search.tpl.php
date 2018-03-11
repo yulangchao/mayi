@@ -1,6 +1,6 @@
 <? if(!defined('IN_MYMPS')) exit('Access Denied');
 /*Mymps分类信息系统
-官方网站：http://www.mymps.com.cn*/?>
+官方网站：http://beimei.online*/?>
 <div id='wx_logo' style='margin:0 auto;display:none;'><img src='<?=$mymps_global['SiteUrl']?>/logowx.jpg'/></div>
 <? if($mod=='post') { ?><script src="<?=$mymps_global['SiteUrl']?>/template/default/js/jquery.min.js"></script><?php } elseif($mod=='information') { ?><script src="<?=$mymps_global['SiteUrl']?>/m/template/js/jq_min.js"></script><?php } else { ?><script src="<?=$mymps_global['SiteUrl']?>/m/template/js/jq_min.211.js"></script><?php } ?>
 <script src="<?=$mymps_global['SiteUrl']?>/m/template/js/common.js"></script>

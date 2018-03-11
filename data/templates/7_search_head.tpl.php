@@ -1,6 +1,6 @@
 <? if(!defined('IN_MYMPS')) exit('Access Denied');
 /*Mymps分类信息系统
-官方网站：http://www.mymps.com.cn*/?>
+官方网站：http://beimei.online*/?>
 <?php include mymps_tpl('search_header'); ?>
 <div class="s_logo">
     <div class="logo"><a href="<?=$mymps_global['SiteUrl']?>"><img src="<?=$mymps_global['SiteLogo']?>" alt="<?=$mymps_global['SiteName']?>"></a></div>
