@@ -67,7 +67,7 @@ if($id) {
 	$rewrite 	= $seo['seo_force_news'];
 	
 	$cat_children	= get_cat_children($catid,'channel');
-	$city_limit = $cityid ? " AND cityid = '$cityid'" : "";
+	$city_limit = $cityid ? " AND (cityid = '$cityid'  or cityid = '0')" : "";
 	
 	$param = setParam(array('catid'),$rewrite,'news-');
 	$rows_num = $db->getOne("SELECT COUNT(*) FROM `{$db_mymps}news` AS a WHERE catid IN($cat_children) {$city_limit}");
@@ -103,7 +103,7 @@ if($id) {
 		$_array['uri'] 		= Rewrite('news',array('catid'=>$queryrow['catid'],'cityid'=>$city['cityid']));
 		$channel[]		= $_array;
 	}
-	$city_limit = $cityid ? " AND cityid = '$cityid'" : "";
+	$city_limit = $cityid ? " AND (cityid = '$cityid'  or cityid = '0')" : "";
 	for($i=0; $i<count($channel); $i++){
 		$do_sql = $db -> query("SELECT iscommend,id,title,catid,begintime,isjump,redirect_url,cityid FROM `{$db_mymps}news` WHERE catid IN(".get_cat_children($channel[$i]['catid'],'channel').") {$city_limit} ORDER BY begintime DESC LIMIT 0,8");
 		while($row = $db -> fetchRow($do_sql)){

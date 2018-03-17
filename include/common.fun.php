@@ -1877,7 +1877,7 @@ function mymps_get_news($num=10,$catid=NULL,$ifimg=NULL,$leftjoin=NULL,$ifhot=NU
 	$cat_limit  = empty($catid) ? '' : "AND a.catid IN(".get_cat_children($catid,'channel').")";
 	$img_limit  = !$ifimg ? '' : "AND a.imgpath != ''";
 	$commend_limit = empty($ifhot) ? '' : " AND a.iscommend = '1'";
-	$city_limit = empty($cityid) ? "" : " AND a.cityid = '$cityid'";
+	$city_limit = empty($cityid) ? "" : " AND a.cityid = '$cityid' or a.cityid = '0'";
 	$orderby	= empty($orderby) ? "ORDER BY a.hit DESC" : "ORDER BY a.id DESC";
 	$res = array();
 	if($leftjoin){
