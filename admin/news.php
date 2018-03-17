@@ -121,7 +121,7 @@ else if ( $part == "add" )
             write_msg( "请填写新闻内容!" );
         }
     }
-    $viewpath = $mymps_global['SiteUrl']."/news.php?id=".$id;
+   
     if ( $isjump == 1 )
     {
         $do_mymps = $db->query( "INSERT INTO `".$db_mymps."news` (title,cityid,catid,redirect_url,isjump,isbold,iscommend,begintime,introduction,author,source,keywords) VALUES ('{$title}','{$cityid}','{$catid}','{$redirect_url}','1','{$isbold}','{$iscommend}','{$timestamp}','{$introduction}','{$author}','{$from}','{$keywords}')" );
@@ -132,11 +132,11 @@ else if ( $part == "add" )
         if ( $ifout == "bodyimg" )
         {
             $imgpath = bodyimg( mystripslashes( $content ) );
-            $imgpath = str_replace("http://beimei.online","",$imgpath);
         }
         $do_mymps = $db->query( "INSERT INTO `".$db_mymps."news` (title,cityid,keywords,catid,isbold,iscommend,content,hit,perhit,begintime,introduction,author,source,imgpath) VALUES\r\n('{$title}','{$cityid}','{$keywords}','{$catid}','{$isbold}','{$iscommend}','{$content}','{$hit}','{$perhit}','{$timestamp}','{$introduction}','{$author}','{$from}','{$imgpath}')" );
     }
     $id = $db->insert_id( );
+    $viewpath = $mymps_global['SiteUrl']."/news.php?id=".$id;
     if ( is_array( $isfocus ) && $imgpath )
     {
         foreach ( $isfocus as $kfocus => $vfocus )
@@ -193,10 +193,9 @@ else if ( $part == "edit" )
     else
     {
         $redirect_url = "";
-        if ( $ifout == "bodyimg" )  
+        if ( $ifout == "bodyimg" )
         {
             $imgpath = bodyimg( mystripslashes( $content ) );
-            $imgpath = str_replace("http://beimei.online","",$imgpath);
         }
         $do_mymps = $db->query( "UPDATE `".$db_mymps."news` SET title = '{$title}', content = '{$content}', keywords = '{$keywords}' , catid = '{$catid}' , cityid = '{$cityid}' , iscommend = '{$iscommend}' , isbold = '{$isbold}' , isjump = '0' , hit = '{$hit}' , perhit = '{$perhit}' ,begintime = '{$timestamp}' , imgpath = '{$imgpath}' , author = '{$author}' , source = '{$from}' , introduction = '{$introduction}' WHERE id = '{$id}'" );
     }
