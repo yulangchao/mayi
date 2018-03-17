@@ -1890,8 +1890,8 @@ function mymps_get_news($num=10,$catid=NULL,$ifimg=NULL,$leftjoin=NULL,$ifhot=NU
 			$arr['content'] 	= clear_html($row['content']);
 			$arr['begintime'] 	= $row['begintime'];
 			$arr['catname']		= $row['catname'];
-			$arr['caturi']		= Rewrite('news',array('catid'=>$row['catid'],'cityid'=>0));
-			$arr['uri']			= $row['isjump'] ? $row['redirect_url'] : Rewrite('news',array('id'=>$row['id'],'cityid'=>0));
+			$arr['caturi']		= Rewrite('news',array('catid'=>$row['catid'],'cityid'=>$cityid));
+			$arr['uri']			= $row['isjump'] ? $row['redirect_url'] : Rewrite('news',array('id'=>$row['id'],'cityid'=>$cityid));
 			$res[]      = $arr;
 		}
 	}else{
@@ -1904,7 +1904,7 @@ function mymps_get_news($num=10,$catid=NULL,$ifimg=NULL,$leftjoin=NULL,$ifhot=NU
 			$arr['imgpath'] 	= $row['imgpath'];
 			$arr['content'] 	= clear_html($row['content']);
 			$arr['begintime'] 	= $row['begintime'];
-			$arr['uri']			= $row['isjump'] ? $row['redirect_url'] : Rewrite('news',array('id'=>$row['id'],'cityid'=>0));
+			$arr['uri']			= $row['isjump'] ? $row['redirect_url'] : Rewrite('news',array('id'=>$row['id'],'cityid'=>$cityid));
 			$res[]      = $arr;
 		}
 	}
