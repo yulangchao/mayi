@@ -43,7 +43,7 @@ if($id){
 	
 	$perpage = $mobile_settings['mobiletopicperpage'] ? $mobile_settings['mobiletopicperpage'] : 10;
 	$param		= setparams(array('mod','cityid'));
-	$rows_num = $db->getOne("SELECT COUNT(*) FROM `{$db_mymps}news` AS a {$city_limit} ORDER BY id DESC");
+	$rows_num = $db->getOne("SELECT COUNT(*) FROM `{$db_mymps}news` AS a WHERE 1 {$city_limit} ORDER BY id DESC");
 	$totalpage = ceil($rows_num/$perpage);
 	$num = intval($page-1)*$perpage;
 	
