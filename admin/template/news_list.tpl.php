@@ -17,7 +17,6 @@
 </select>
 <?php if(!$admin_cityid){?><select name="cityid">
 <option value="">所属分站</option>
-<option value="0">总站</option>
 <?php echo get_cityoptions($cityid); ?>
 </select>
 <? }else{ ?>

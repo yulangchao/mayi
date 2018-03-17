@@ -65,7 +65,6 @@ function NewsAdd(){
     <td>隶属分站：</td>
     <td>
     <select name="cityid">
-    <option value="0">总站</option>
     <?php echo get_cityoptions($row[cityid]); ?>
    </select>
     </td>

@@ -195,6 +195,7 @@ else if ( $part == "edit" )
         if ( $ifout == "bodyimg" )
         {
             $imgpath = bodyimg( mystripslashes( $content ) );
+            $imgpath = str_replace("http://beimei.online","",$imgpath);
         }
         $do_mymps = $db->query( "UPDATE `".$db_mymps."news` SET title = '{$title}', content = '{$content}', keywords = '{$keywords}' , catid = '{$catid}' , cityid = '{$cityid}' , iscommend = '{$iscommend}' , isbold = '{$isbold}' , isjump = '0' , hit = '{$hit}' , perhit = '{$perhit}' ,begintime = '{$timestamp}' , imgpath = '{$imgpath}' , author = '{$author}' , source = '{$from}' , introduction = '{$introduction}' WHERE id = '{$id}'" );
     }
