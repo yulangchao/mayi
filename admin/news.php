@@ -132,6 +132,7 @@ else if ( $part == "add" )
         if ( $ifout == "bodyimg" )
         {
             $imgpath = bodyimg( mystripslashes( $content ) );
+            $imgpath = str_replace("http://beimei.online","",$imgpath);
         }
         $do_mymps = $db->query( "INSERT INTO `".$db_mymps."news` (title,cityid,keywords,catid,isbold,iscommend,content,hit,perhit,begintime,introduction,author,source,imgpath) VALUES\r\n('{$title}','{$cityid}','{$keywords}','{$catid}','{$isbold}','{$iscommend}','{$content}','{$hit}','{$perhit}','{$timestamp}','{$introduction}','{$author}','{$from}','{$imgpath}')" );
     }
@@ -192,7 +193,7 @@ else if ( $part == "edit" )
     else
     {
         $redirect_url = "";
-        if ( $ifout == "bodyimg" )
+        if ( $ifout == "bodyimg" )  
         {
             $imgpath = bodyimg( mystripslashes( $content ) );
             $imgpath = str_replace("http://beimei.online","",$imgpath);
