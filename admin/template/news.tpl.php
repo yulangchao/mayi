@@ -131,7 +131,7 @@ function NewsAdd(){
         <label><input type="radio" onclick='
         document.getElementById("iframe").style.display = "block";
         document.getElementById("imgsrc").style.display = "block";' name="ifout" value="yes" class="radio"/>本地上传</label>
-        <input name=imgpath id="imgsrc" type="text" class="text" value="<?=$row[imgpath] ?>" style=" margin:10px 0; display:none; width:300px"/>
+        <input name=imgpath id="imgsrc" type="text" class="text" value="<?=str_replace($mymps_global['SiteUrl'],"",$row[imgpath]);  ?>" style=" margin:10px 0; display:none; width:300px"/>
          
         <iframe src="include/upfile.php?destination=news&watermark=0" width="450" frameborder="0" scrolling="no" onload="this.height=iFrame1.document.body.scrollHeight" id="iframe" style="display:none; margin-top:10px"></iframe>
     </td>
