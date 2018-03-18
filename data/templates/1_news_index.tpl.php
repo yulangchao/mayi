@@ -335,7 +335,7 @@
             </div>
         </div>
         <div class="foot_wx" id="gzh">
-        	<div class="hd">关注微信公众号</div>
+        	<div class="hd">联系微信</div>
             <div class="bd">
             	<ul>
                 	<img alt="<?=$mymps_global['SiteName']?>微信公众号" src="<?=$mymps_global['SiteUrl']?>/erweima.gif">

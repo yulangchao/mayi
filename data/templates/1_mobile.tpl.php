@@ -51,7 +51,7 @@
 <div class="input_words">通过手机/平板电脑浏览器输入即可访问网站</div>
 <div class="inputdomain"><?=$mobile_settings['mdomain']?></div>
 <div class="input_image">
-                <div id="gzh"><img src="<?=$mymps_global['SiteUrl']?>/erweima.gif" valign="absmiddle"><br />关注微信公众号</div>
+                <div id="gzh"><img src="<?=$mymps_global['SiteUrl']?>/erweima.gif" valign="absmiddle"><br />联系微信</div>
                 <div><img src="<?=$mymps_global['SiteUrl']?>/qrcode.php?value=<?=$mobile_settings['mdomain']?>&size=5.3" valign="absmiddle"><br />手机扫描二维码访问</div>
                 </div>
 </div>
