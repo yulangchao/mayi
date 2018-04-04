@@ -165,7 +165,7 @@
 <?php }} ?>
                             
 </div>
-<!-- <div id="indextop2"></div> -->
+<div id="indextop2"></div>
 </div>
 </div>
 <div class="postinfo">

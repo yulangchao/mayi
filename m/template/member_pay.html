@@ -7,6 +7,224 @@
 	<link type="text/css" rel="stylesheet" href="template/css/style.css">
 	<link type="text/css" rel="stylesheet" href="template/css/member_new.css">
     <script>window['current'] = '会员中心';</script>
+	        <script src="https://js.stripe.com/v3/"></script>
+        <!-- jQuery is used only for this example; it isn't required to use Stripe -->
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+	<style>
+	/**
+ * The CSS shown here will not be introduced in the Quickstart guide, but shows
+ * how you can use CSS to style your Element's container.
+ */
+.StripeElement {
+  background-color: white;
+  height: 40px;
+  padding: 10px 12px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  box-shadow: 0 1px 3px 0 #e6ebf1;
+  -webkit-transition: box-shadow 150ms ease;
+  transition: box-shadow 150ms ease;
+}
+
+.StripeElement--focus {
+  box-shadow: 0 1px 3px 0 #cfd7df;
+}
+
+.StripeElement--invalid {
+  border-color: #fa755a;
+}
+
+.StripeElement--webkit-autofill {
+  background-color: #fefde5 !important;
+}
+</style>
+        <script type="text/javascript">
+
+					
+					
+					
+					var getUrlParameter = function getUrlParameter(sParam) {
+								var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+										sURLVariables = sPageURL.split('&'),
+										sParameterName,
+										i;
+
+								for (i = 0; i < sURLVariables.length; i++) {
+										sParameterName = sURLVariables[i].split('=');
+
+										if (sParameterName[0] === sParam) {
+												return sParameterName[1] === undefined ? true : sParameterName[1];
+										}
+								}
+						};
+            $(document).ready(function() {
+							
+							$('input[name=payment_type]').click(function(){
+								
+								if ($('input[name=payment_type]:checked').val() == 1){
+									$('#credit-card').hide();
+									$('#alipay').show();
+								} else{
+									$('#credit-card').show();
+									$('#alipay').hide();
+								}
+							})
+							
+							
+							if (getUrlParameter('money')&&getUrlParameter('source')&&getUrlParameter('type')==1){
+								$.ajax({
+									type: "POST",
+									url: 'https://beimei.online/member/index.php?m=pay&ac=pay',
+									data: {
+										 'money': getUrlParameter('money')*100,
+										 'source':getUrlParameter('source'),
+										 'type':'支付宝',
+									},
+									success: function (response) {
+										
+										if(response == "succeeded"){
+											alert('支付成功，支付金额'+getUrlParameter('money') + 'Cad');
+											location.href='/m/index.php?mod=member';
+										}else{
+											alert('支付失败');
+											location.href='/m/index.php?mod=member&action=pay';
+										}
+									},
+									error: function () {
+											alert("error");
+									}
+								});
+							}
+							
+							
+							
+							var stripe = Stripe('pk_live_omT4MMJ9wFAoVxRwg07O70t1');
+							// Create an instance of Elements.
+							var elements = stripe.elements();
+
+							// Custom styling can be passed to options when creating an Element.
+							// (Note that this demo uses a wider set of styles than the guide below.)
+							var style = {
+								base: {
+									color: '#32325d',
+									lineHeight: '18px',
+									fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+									fontSmoothing: 'antialiased',
+									fontSize: '16px',
+									'::placeholder': {
+										color: '#aab7c4'
+									}
+								},
+								invalid: {
+									color: '#fa755a',
+									iconColor: '#fa755a'
+								}
+							};
+
+							// Create an instance of the card Element.
+							var card = elements.create('card', {style: style});
+
+							// Add an instance of the card Element into the `card-element` <div>.
+							card.mount('#card-element');
+
+							// Handle real-time validation errors from the card Element.
+							card.addEventListener('change', function(event) {
+								var displayError = document.getElementById('card-errors');
+								if (event.error) {
+									displayError.textContent = event.error.message;
+								} else {
+									displayError.textContent = '';
+								}
+							});
+							
+							   $("#payment-form").submit(function(event) {
+                    event.preventDefault();
+									  var amount = $('#money').val();
+									  var type = $('input[name=payment_type]:checked').val();
+									 
+									  if(type ==1){
+													stripe.createSource({
+														type: 'alipay',
+														amount: amount*100,
+														currency: 'cad',
+														redirect: {
+															return_url: 'https://beimei.online/m/index.php?mod=member&action=pay&type=1&money='+amount,
+														},
+													}).then(function(result) {
+														// handle result.error or result.source
+														
+
+														location.href=result['source']['redirect']['url'];
+
+															//stripeResponseHandler('',result['source']);
+													});
+										}else{
+
+
+  stripe.createToken(card).then(function(result) {
+    if (result.error) {
+      // Inform the user if there was an error.
+      var errorElement = document.getElementById('card-errors');
+      errorElement.textContent = result.error.message;
+    } else {
+      					$.ajax({
+									type: "POST",
+									url: 'https://beimei.online/member/index.php?m=pay&ac=pay',
+									data: {
+										 'money': amount*100,
+										 'source':	result.token.id,
+										 'type':'信用卡',
+									},
+									success: function (response) {
+										
+										if(response == "succeeded"){
+											alert('支付成功，支付金额'+amount + 'Cad');
+											location.href='/m/index.php?mod=member';
+										}else{
+											alert('支付失败');
+											
+										}
+									},
+									error: function () {
+											alert("error");
+									}
+								});
+			
+      //stripeTokenHandler(result.token);
+    }
+  });
+										}
+                });
+
+
+							  
+//                 $("#payment-form").submit(function(event) {
+//                     // disable the submit button to prevent repeated clicks
+//                     $('.submit-button').attr("disabled", "disabled");
+//                     // createToken returns immediately - the supplied callback submits the form if there are no errors
+//                     Stripe.createToken({
+//                         number: $('.card-number').val(),
+//                         cvc: $('.card-cvc').val(),
+//                         exp_month: $('.card-expiry-month').val(),
+//                         exp_year: $('.card-expiry-year').val()
+//                     }, stripeResponseHandler);
+//                     return false; // submit from callback
+//                 });
+            });
+        </script>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 </head>
 <body class="{$mymps_global[cfg_tpl_dir]}">
 <div class="wrapper">
@@ -27,7 +245,7 @@
             </div>
 		</div>
 		<div class="order_inner">
-			<form name="form1" id="form1" method="get" action="index.php?">
+			<form name="form1" id="payment-form" method="get" action="index.php?">
             <input name="action" value="pay" type="hidden">
             <input name="mod" value="member" type="hidden">
             <input name="dopost" value="1" type="hidden">
@@ -49,6 +267,36 @@
                 <em id="shu_title">购买金币：</em>
                 <input type="text" onBlur="minPay()" id="money" name="money" class="ipt" value="{echo $money?$money:$mymps_global[cfg_pay_min]}" maxlength="10" placeholder="输入整数" style="width:140px; text-align:left; padding-left:4px;" />个
                 </p>
+				<div style="margin:2px 5px">
+																											<div class="radio" style="width:50%; float:left">
+																								<label><input type="radio" name="payment_type" value=1 checked="checked">支付宝</label>
+																							</div>
+																							<div class="radio" style="width:50%; float:left">
+																								<label><input type="radio" name="payment_type" value=2>信用卡</label>
+																							</div>
+																					
+
+																					<div id="alipay" style="">
+																					  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEdo76SRLO8JGYkqlendOAP32PqcngWHEaePqDk3hgZGDnhx3O">
+																					</div>
+																					<div id="credit-card" style="display:none;">
+  <div class="form-row">
+    <label for="card-element">
+      Credit or debit card
+    </label>
+    <div id="card-element">
+      <!-- A Stripe Element will be inserted here. -->
+    </div>
+
+    <!-- Used to display form errors. -->
+    <div id="card-errors" role="alert"></div>
+  </div>
+																					</div>
+				
+				</div>
+				
+				
+				
                 <p class="p number">
                 <em id="shu_title">实际应付：</em>
                 <font id="mustpay" color="red">{echo ($money?$money:$mymps_global[cfg_pay_min])/$mymps_global[cfg_coin_fee]}</font>{$moneytype}

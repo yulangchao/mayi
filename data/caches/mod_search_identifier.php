@@ -156,8 +156,6 @@ $data = array (
     'identifier' => 
     array (
       0 => 'salary',
-      1 => 'fuli',
-      2 => 'property',
     ),
   ),
   6 => 

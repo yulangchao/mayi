@@ -1,7 +1,7 @@
 RewriteEngine On
 RewriteBase /
 
-#Èç¹ûÊÇ¶þ¼¶ÓòÃû,É¾³ýÏÂÃæ2ÐÐµÄ# ×¢ÊÍ
+#ï¿½ï¿½ï¿½ï¿½Ç¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,É¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½2ï¿½Ðµï¿½# ×¢ï¿½ï¿½
 #RewriteCond Host:  ([a-z]+)\.aaa\.com
 #RewriteRule ^(.*) /$1/$2
 
@@ -27,3 +27,4 @@ RewriteRule ^announce\.html$ about\.php\?part=announce&id=$1
 RewriteRule ^faq\.html$ about\.php\?part=faq
 RewriteRule ^faq-id-([0-9]+)\.html$ about\.php\?part=faq&id=$1
 RewriteRule ^friendlink\.html$ about\.php\?part=friendlink
+

@@ -18,7 +18,7 @@ if($id){
 	$cat_children	= get_cat_children($catid,'channel');
 	$perpage = $mobile_settings['mobiletopicperpage'] ? $mobile_settings['mobiletopicperpage'] : 10;
 	$param		= setparams(array('mod','catid'));
-	$rows_num = $db->getOne("SELECT COUNT(*) FROM `{$db_mymps}news` AS a WHERE catid IN($cat_children)");
+	$rows_num = $db->getOne("SELECT COUNT(*) FROM `{$db_mymps}news` AS a WHERE catid IN($cat_children) {$city_limit}");
 	$totalpage = ceil($rows_num/$perpage);
 	$num = intval($page-1)*$perpage;
 	

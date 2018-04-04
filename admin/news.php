@@ -122,40 +122,85 @@ else if ( $part == "add" )
         }
     }
    
-    if ( $isjump == 1 )
-    {
-        $do_mymps = $db->query( "INSERT INTO `".$db_mymps."news` (title,cityid,catid,redirect_url,isjump,isbold,iscommend,begintime,introduction,author,source,keywords) VALUES ('{$title}','{$cityid}','{$catid}','{$redirect_url}','1','{$isbold}','{$iscommend}','{$timestamp}','{$introduction}','{$author}','{$from}','{$keywords}')" );
+    if ($cityid == -1){
+      if ( $isjump == 1 )
+      {
+        $do_mymps = $db->query( "INSERT INTO `".$db_mymps."news` (title,cityid,catid,redirect_url,isjump,isbold,iscommend,begintime,introduction,author,source,keywords) VALUES ('{$title}','1','{$catid}','{$redirect_url}','1','{$isbold}','{$iscommend}','{$timestamp}','{$introduction}','{$author}','{$from}','{$keywords}')" );
+        $do_mymps = $db->query( "INSERT INTO `".$db_mymps."news` (title,cityid,catid,redirect_url,isjump,isbold,iscommend,begintime,introduction,author,source,keywords) VALUES ('{$title}','2','{$catid}','{$redirect_url}','1','{$isbold}','{$iscommend}','{$timestamp}','{$introduction}','{$author}','{$from}','{$keywords}')" );
+        $do_mymps = $db->query( "INSERT INTO `".$db_mymps."news` (title,cityid,catid,redirect_url,isjump,isbold,iscommend,begintime,introduction,author,source,keywords) VALUES ('{$title}','3','{$catid}','{$redirect_url}','1','{$isbold}','{$iscommend}','{$timestamp}','{$introduction}','{$author}','{$from}','{$keywords}')" );
+      }
+      else
+      {
+          $redirect_url = "";
+          if ( $ifout == "bodyimg" )
+          {
+              $imgpath = bodyimg( mystripslashes( $content ) );
+          } else{
+              $imgpath = str_replace($mymps_global['SiteUrl'],"",$imgpath);
+          }
+         $do_mymps = $db->query( "INSERT INTO `".$db_mymps."news` (title,cityid,keywords,catid,isbold,iscommend,content,hit,perhit,begintime,introduction,author,source,imgpath) VALUES\r\n('{$title}','1','{$keywords}','{$catid}','{$isbold}','{$iscommend}','{$content}','{$hit}','{$perhit}','{$timestamp}','{$introduction}','{$author}','{$from}','{$imgpath}')" );
+         $do_mymps = $db->query( "INSERT INTO `".$db_mymps."news` (title,cityid,keywords,catid,isbold,iscommend,content,hit,perhit,begintime,introduction,author,source,imgpath) VALUES\r\n('{$title}','2','{$keywords}','{$catid}','{$isbold}','{$iscommend}','{$content}','{$hit}','{$perhit}','{$timestamp}','{$introduction}','{$author}','{$from}','{$imgpath}')" );
+         $do_mymps = $db->query( "INSERT INTO `".$db_mymps."news` (title,cityid,keywords,catid,isbold,iscommend,content,hit,perhit,begintime,introduction,author,source,imgpath) VALUES\r\n('{$title}','3','{$keywords}','{$catid}','{$isbold}','{$iscommend}','{$content}','{$hit}','{$perhit}','{$timestamp}','{$introduction}','{$author}','{$from}','{$imgpath}')" );
+      }
+      $id = $db->insert_id( );
+      $viewpath = $mymps_global['SiteUrl']."/news.php?id=".$id;
+      if ( is_array( $isfocus ) && $imgpath )
+      {
+          foreach ( $isfocus as $kfocus => $vfocus )
+          {
+              if ( $vfocus == "index" )
+              {
+                  $typename = "网站首页";
+              }
+              else
+              {
+                  $typename = "新闻首页";
+              }
+              $db->query( "INSERT INTO `".$db_mymps."focus` (image,pre_image,words,url,pubdate,focusorder,typename)\r\n\t\t\t\tVALUES('{$imgpath}','{$imgpath}','{$title}','{$viewpath}','{$timestamp}','{$id}','{$typename}')" );
+          }
+          clear_cache_files( "focus_index" );
+          clear_cache_files( "focus_news" );
+      }
+      $message = "成功增加一篇新闻 <<".$title.">>";
+      write_msg( $message, "news.php" );
+    }else{
+      if ( $isjump == 1 )
+      {
+          $do_mymps = $db->query( "INSERT INTO `".$db_mymps."news` (title,cityid,catid,redirect_url,isjump,isbold,iscommend,begintime,introduction,author,source,keywords) VALUES ('{$title}','{$cityid}','{$catid}','{$redirect_url}','1','{$isbold}','{$iscommend}','{$timestamp}','{$introduction}','{$author}','{$from}','{$keywords}')" );
+      }
+      else
+      {
+          $redirect_url = "";
+          if ( $ifout == "bodyimg" )
+          {
+              $imgpath = bodyimg( mystripslashes( $content ) );
+          } else{
+              $imgpath = str_replace($mymps_global['SiteUrl'],"",$imgpath);
+          }
+          $do_mymps = $db->query( "INSERT INTO `".$db_mymps."news` (title,cityid,keywords,catid,isbold,iscommend,content,hit,perhit,begintime,introduction,author,source,imgpath) VALUES\r\n('{$title}','{$cityid}','{$keywords}','{$catid}','{$isbold}','{$iscommend}','{$content}','{$hit}','{$perhit}','{$timestamp}','{$introduction}','{$author}','{$from}','{$imgpath}')" );
+      }
+      $id = $db->insert_id( );
+      $viewpath = $mymps_global['SiteUrl']."/news.php?id=".$id;
+      if ( is_array( $isfocus ) && $imgpath )
+      {
+          foreach ( $isfocus as $kfocus => $vfocus )
+          {
+              if ( $vfocus == "index" )
+              {
+                  $typename = "网站首页";
+              }
+              else
+              {
+                  $typename = "新闻首页";
+              }
+              $db->query( "INSERT INTO `".$db_mymps."focus` (image,pre_image,words,url,pubdate,focusorder,typename)\r\n\t\t\t\tVALUES('{$imgpath}','{$imgpath}','{$title}','{$viewpath}','{$timestamp}','{$id}','{$typename}')" );
+          }
+          clear_cache_files( "focus_index" );
+          clear_cache_files( "focus_news" );
+      }
+      $message = "成功增加一篇新闻 <<".$title.">>";
+      write_msg( $message, "news.php" );
     }
-    else
-    {
-        $redirect_url = "";
-        if ( $ifout == "bodyimg" )
-        {
-            $imgpath = bodyimg( mystripslashes( $content ) );
-        }
-        $do_mymps = $db->query( "INSERT INTO `".$db_mymps."news` (title,cityid,keywords,catid,isbold,iscommend,content,hit,perhit,begintime,introduction,author,source,imgpath) VALUES\r\n('{$title}','{$cityid}','{$keywords}','{$catid}','{$isbold}','{$iscommend}','{$content}','{$hit}','{$perhit}','{$timestamp}','{$introduction}','{$author}','{$from}','{$imgpath}')" );
-    }
-    $id = $db->insert_id( );
-    $viewpath = $mymps_global['SiteUrl']."/news.php?id=".$id;
-    if ( is_array( $isfocus ) && $imgpath )
-    {
-        foreach ( $isfocus as $kfocus => $vfocus )
-        {
-            if ( $vfocus == "index" )
-            {
-                $typename = "网站首页";
-            }
-            else
-            {
-                $typename = "新闻首页";
-            }
-            $db->query( "INSERT INTO `".$db_mymps."focus` (image,pre_image,words,url,pubdate,focusorder,typename)\r\n\t\t\t\tVALUES('{$imgpath}','{$imgpath}','{$title}','{$viewpath}','{$timestamp}','{$id}','{$typename}')" );
-        }
-        clear_cache_files( "focus_index" );
-        clear_cache_files( "focus_news" );
-    }
-    $message = "成功增加一篇新闻 <<".$title.">>";
-    write_msg( $message, "news.php" );
 }
 else if ( $part == "edit" )
 {
@@ -196,6 +241,9 @@ else if ( $part == "edit" )
         if ( $ifout == "bodyimg" )
         {
             $imgpath = bodyimg( mystripslashes( $content ) );
+          
+        } else{
+            $imgpath = str_replace($mymps_global['SiteUrl'],"",$imgpath);
         }
         $do_mymps = $db->query( "UPDATE `".$db_mymps."news` SET title = '{$title}', content = '{$content}', keywords = '{$keywords}' , catid = '{$catid}' , cityid = '{$cityid}' , iscommend = '{$iscommend}' , isbold = '{$isbold}' , isjump = '0' , hit = '{$hit}' , perhit = '{$perhit}' ,begintime = '{$timestamp}' , imgpath = '{$imgpath}' , author = '{$author}' , source = '{$from}' , introduction = '{$introduction}' WHERE id = '{$id}'" );
     }

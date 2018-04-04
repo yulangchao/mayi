@@ -35,7 +35,7 @@ $data = array (
       43 => 
       array (
         'catid' => '43',
-        'catname' => '二手房出售',
+        'catname' => '房屋出售',
         'if_view' => '2',
         'color' => '',
         'dir_typename' => 'ershoufang',
@@ -309,7 +309,7 @@ $data = array (
       249 => 
       array (
         'catid' => '249',
-        'catname' => '网游/虚拟物品',
+        'catname' => '游戏/虚拟物品',
         'if_view' => '2',
         'color' => '',
         'dir_typename' => 'wangyou-xuniwupin',

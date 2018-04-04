@@ -43,11 +43,32 @@ $data = array (
   'citypy' => 'Vancouver',
   'cityname' => '温哥华',
   'directory' => 'van',
-  'domain' => 'http://beimei.online/city/van/',
+  'domain' => 'https://beimei.online/city/van/',
   'mappoint' => '',
   'firstletter' => 'W',
   'title' => '',
   'keywords' => '',
   'description' => '',
+  'advertisement' => 
+  array (
+    28 => '<a style="float:left;padding:0px 0px; " href="" target="_blank"><img src="https://dummyimage.com/197x70/e6c8e6/fff&text=%E5%B9%BF%E5%91%8A%E4%BD%8D+tel%EF%BC%9A6047195215" style="width:197px;height:70px;" width="100%" border="0"></a>',
+    66 => '<a style="float:left;padding:0px 0px; " href="" target="_blank"><img src="/attachment/other/201803/1520792686ctdzw.png" style="width:197px;height:70px;" width="100%" border="0"></a>',
+    67 => '<a style="float:left;padding:0px 0px; " href="" target="_blank"><img src="https://www.xiaohuazu.com/uploads/allimg/121210/1-1212101956342555.gif" style="width:197px;height:70px;" width="100%" border="0"></a>',
+    68 => '<a style="float:left;padding:0px 0px; " href="" target="_blank"><img src="https://www.xiaohuazu.com/uploads/allimg/140703/1PK43562-0.gif" style="width:197px;height:70px;" width="100%" border="0"></a>',
+    69 => '<a style="float:left;padding:0px 0px; " href="" target="_blank"><img src="https://www.xiaohuazu.com/uploads/allimg/140508/1J41444c-0.gif" style="width:197px;height:70px;" width="100%" border="0"></a>',
+    70 => '<a style="float:left;padding:0px 5px;" href="" target="_blank"><img src="https://dummyimage.com/190x70/e6c8e6/fff&text=%E5%B9%BF%E5%91%8A%E4%BD%8D+tel%EF%BC%9A6047195215" width="100%" border="0"></a>
+<a style="float:left;padding:0px 5px;" href="" target="_blank"><img src="https://dummyimage.com/190x70/e6c8e6/fff&text=%E5%B9%BF%E5%91%8A%E4%BD%8D+tel%EF%BC%9A6047195215" width="100%" border="0"></a>
+<a style="float:left;padding:0px 5px;" href="" target="_blank"><img src="https://dummyimage.com/190x70/e6c8e6/fff&text=%E5%B9%BF%E5%91%8A%E4%BD%8D+tel%EF%BC%9A6047195215" width="100%" border="0"></a>
+<a style="float:left;padding:0px 5px;" href="" target="_blank"><img src="https://dummyimage.com/190x70/e6c8e6/fff&text=%E5%B9%BF%E5%91%8A%E4%BD%8D+tel%EF%BC%9A6047195215" width="100%" border="0"></a>
+<a style="float:left;padding:0px 5px;" href="" target="_blank"><img src="https://dummyimage.com/190x70/e6c8e6/fff&text=%E5%B9%BF%E5%91%8A%E4%BD%8D+tel%EF%BC%9A6047195215" width="100%" border="0"></a>
+<a style="float:left;padding:0px 5px;" href="" target="_blank"><img src="https://dummyimage.com/190x70/e6c8e6/fff&text=%E5%B9%BF%E5%91%8A%E4%BD%8D+tel%EF%BC%9A6047195215" width="100%" border="0"></a>',
+    71 => '<a style="float:left;padding:0px 5px;" href="" target="_blank"><img src="https://dummyimage.com/190x70/c8cbe6/fff&text=%E5%B9%BF%E5%91%8A%E4%BD%8D+tel%EF%BC%9A6047195215" width="100%" border="0"></a>
+<a style="float:left;padding:0px 5px;" href="" target="_blank"><img src="https://dummyimage.com/190x70/c8cbe6/fff&text=%E5%B9%BF%E5%91%8A%E4%BD%8D+tel%EF%BC%9A6047195215" width="100%" border="0"></a>
+<a style="float:left;padding:0px 5px;" href="" target="_blank"><img src="https://dummyimage.com/190x70/c8cbe6/fff&text=%E5%B9%BF%E5%91%8A%E4%BD%8D+tel%EF%BC%9A6047195215" width="100%" border="0"></a>
+<a style="float:left;padding:0px 5px;" href="" target="_blank"><img src="https://dummyimage.com/190x70/c8cbe6/fff&text=%E5%B9%BF%E5%91%8A%E4%BD%8D+tel%EF%BC%9A6047195215" width="100%" border="0"></a>
+<a style="float:left;padding:0px 5px;" href="" target="_blank"><img src="https://dummyimage.com/190x70/c8cbe6/fff&text=%E5%B9%BF%E5%91%8A%E4%BD%8D+tel%EF%BC%9A6047195215" width="100%" border="0"></a>
+<a style="float:left;padding:0px 5px;" href="" target="_blank"><img src="https://dummyimage.com/190x70/c8cbe6/fff&text=%E5%B9%BF%E5%91%8A%E4%BD%8D+tel%EF%BC%9A6047195215" width="100%" border="0"></a>',
+    72 => '<a style="float:left;padding:0px 0px; " href="" target="_blank"><img src="https://www.xiaohuazu.com/uploads/allimg/121213/1-12121314340V58.gif" style="width:197px;height:70px;" width="100%" border="0"></a>',
+  ),
 );
 ?>

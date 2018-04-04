@@ -3,6 +3,7 @@ if(!defined('IN_MYMPS')) exit('Forbidden');
 $ac = in_array($ac,array('pay','record','use')) ? trim($ac) : 'pay';
 $mymps_global['cfg_coin_fee'] = $mymps_global['cfg_coin_fee'] ? $mymps_global['cfg_coin_fee'] : 1;
 require_once MYMPS_DATA.'/moneytype.inc.php';
+require_once MYMPS_DATA.'/../stripe-php-5.8.0/init.php';
 
 if(submit_check('pay_submit')){
 	$money = isset($_POST['money']) ? intval($_POST['money']) : '';
@@ -17,24 +18,31 @@ if(submit_check('pay_submit')){
 		write_msg('','?m=pay&ac=use&success=11');
 	}
 	if(!empty($money) && $ac == 'pay'){
-		$money=(float)$money;
-		$money = ceil($money/$mymps_global['cfg_coin_fee']);
-		if($money <= 0) write_msg('','?m=pay&error=17');
-		$payid=(int)$_POST['payid'];
-		if(!$payid) write_msg('','?m=pay&error=18');
-		$payr = $db->getRow("SELECT * FROM {$db_mymps}payapi WHERE payid='$payid' AND isclose=0");
-		if(!$payr['payid']) write_msg('','?m=pay&error=18');
-		$ddno=$timestamp;
-		$pay_type 	 = 'PayToMoney';
-		$productname = '金币充值';
-		include MYMPS_INC.'/pay.fun.php';
-		msetcookie("pay_type",$pay_type,0);
-		//返回地址前缀
-		$PayReturnUrlQz=$mymps_global['SiteUrl'];
-		if($charset=='utf-8'){
-			@header('Content-Type: text/html; charset=utf-8');
+	 
+		$error = '';
+		$success = '';
+		try {
+			
+				\Stripe\Stripe::setApiKey('sk_live_5mc4KnwKsaAul8069u0zrpmT');
+				$charge = \Stripe\Charge::create(array('amount' => $_POST['money'], 'currency' => 'cad', 'source' => $_POST['source']));
+			  if ($charge['status']=="succeeded"){
+			  $payip	=	GetIP();
+			  $mymps_paytype = $_POST['type'];
+			  $money = $_POST['money']/100;
+			  $r = $db -> getRow("SELECT userid FROM `{$db_mymps}member` WHERE id = '$uid'");
+			  $userid = $r['userid'];
+			  $time = time();
+				$order_sn = $charge['id'];
+			  $db -> query("Update {$db_mymps}member set money_own=money_own+'$money' where id = '$uid';");
+        $db -> query("INSERT INTO {$db_mymps}payrecord(id,payment_order_sn,uid,userid,orderid,money,ifadd,posttime,paybz,type,payip) values('','$order_sn','$uid','$userid','$time','$money',1,'$time','充值成功','$mymps_paytype','$payip');");
+				}
+				echo ($charge['status']);
 		}
-		include MYMPS_INC.'/payment/'.$payr['paytype'].'/to_pay.php';
+		catch (Exception $e) {
+			$error = $e->getMessage();
+			echo ($error);
+		}
+
 	}
 }else{
 	$begindate	= isset($_GET['begindate']) ? $_GET['begindate'] : '';

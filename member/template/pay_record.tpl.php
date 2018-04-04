@@ -1,6 +1,7 @@
 <?php include mymps_tpl('inc_header');?>
 <link rel="stylesheet" type="text/css" href="template/css/new.my.css" />
 <link rel="stylesheet" type="text/css" href="template/css/new.exchange.css" />
+<script language="javascript" src="template/javascript.js"></script>
 </head>
 <body class="<?php echo $mymps_global['cfg_tpl_dir']; ?>">
 <div class="container">

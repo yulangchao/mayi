@@ -2,6 +2,210 @@
 <link rel="Stylesheet" type="text/css" href="template/css/new.dialog.css" />
 <link rel="stylesheet" type="text/css" href="template/css/new.my.css" />
 <script language="javascript" src="template/javascript.js"></script>
+        <script src="https://js.stripe.com/v3/"></script>
+        <!-- jQuery is used only for this example; it isn't required to use Stripe -->
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<style>
+	/**
+ * The CSS shown here will not be introduced in the Quickstart guide, but shows
+ * how you can use CSS to style your Element's container.
+ */
+.StripeElement {
+  background-color: white;
+  height: 40px;
+  padding: 10px 12px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  box-shadow: 0 1px 3px 0 #e6ebf1;
+  -webkit-transition: box-shadow 150ms ease;
+  transition: box-shadow 150ms ease;
+}
+
+.StripeElement--focus {
+  box-shadow: 0 1px 3px 0 #cfd7df;
+}
+
+.StripeElement--invalid {
+  border-color: #fa755a;
+}
+
+.StripeElement--webkit-autofill {
+  background-color: #fefde5 !important;
+}
+</style>
+        <script type="text/javascript">
+
+					
+					
+					
+					var getUrlParameter = function getUrlParameter(sParam) {
+								var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+										sURLVariables = sPageURL.split('&'),
+										sParameterName,
+										i;
+
+								for (i = 0; i < sURLVariables.length; i++) {
+										sParameterName = sURLVariables[i].split('=');
+
+										if (sParameterName[0] === sParam) {
+												return sParameterName[1] === undefined ? true : sParameterName[1];
+										}
+								}
+						};
+            $(document).ready(function() {
+							
+							$('input[name=payment_type]').click(function(){
+								
+								if ($('input[name=payment_type]:checked').val() == 1){
+									$('#credit-card').hide();
+									$('#alipay').show();
+								} else{
+									$('#credit-card').show();
+									$('#alipay').hide();
+								}
+							})
+							
+							
+							if (getUrlParameter('money')&&getUrlParameter('source')&&getUrlParameter('type')==1){
+								$.ajax({
+									type: "POST",
+									url: 'https://beimei.online/member/index.php?m=pay&ac=pay',
+									data: {
+										 'money': getUrlParameter('money'),
+										 'source':getUrlParameter('source'),
+										 'type':'支付宝',
+									},
+									success: function (response) {
+											
+										if(response == "succeeded"){
+											alert('支付成功，支付金额'+getUrlParameter('money')/100 + 'Cad');
+											location.href='/member/index.php?m=pay&ac=record';
+										}else{
+											alert('支付失败');
+											location.href='/member/index.php?m=pay&ac=pay';
+										}
+									},
+									error: function () {
+											alert("error");
+									}
+								});
+							}
+							
+							
+							
+							var stripe = Stripe('pk_live_omT4MMJ9wFAoVxRwg07O70t1');
+							// Create an instance of Elements.
+							var elements = stripe.elements();
+
+							// Custom styling can be passed to options when creating an Element.
+							// (Note that this demo uses a wider set of styles than the guide below.)
+							var style = {
+								base: {
+									color: '#32325d',
+									lineHeight: '18px',
+									fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+									fontSmoothing: 'antialiased',
+									fontSize: '16px',
+									'::placeholder': {
+										color: '#aab7c4'
+									}
+								},
+								invalid: {
+									color: '#fa755a',
+									iconColor: '#fa755a'
+								}
+							};
+
+							// Create an instance of the card Element.
+							var card = elements.create('card', {style: style});
+
+							// Add an instance of the card Element into the `card-element` <div>.
+							card.mount('#card-element');
+
+							// Handle real-time validation errors from the card Element.
+							card.addEventListener('change', function(event) {
+								var displayError = document.getElementById('card-errors');
+								if (event.error) {
+									displayError.textContent = event.error.message;
+								} else {
+									displayError.textContent = '';
+								}
+							});
+							
+							   $("#payment-form").submit(function(event) {
+                    event.preventDefault();
+									  var amount = $('#payvalue').val();
+									  var type = $('input[name=payment_type]:checked').val();
+									  if(type ==1){
+													stripe.createSource({
+														type: 'alipay',
+														amount: amount*100,
+														currency: 'cad',
+														redirect: {
+															return_url: 'https://beimei.online/member/index.php?m=pay&type=user&type=1&money='+amount*100,
+														},
+													}).then(function(result) {
+														// handle result.error or result.source
+														
+
+														location.href=result['source']['redirect']['url'];
+
+															//stripeResponseHandler('',result['source']);
+													});
+										}else{
+
+
+  stripe.createToken(card).then(function(result) {
+    if (result.error) {
+      // Inform the user if there was an error.
+      var errorElement = document.getElementById('card-errors');
+      errorElement.textContent = result.error.message;
+    } else {
+      					$.ajax({
+									type: "POST",
+									url: 'https://beimei.online/member/index.php?m=pay&ac=pay',
+									data: {
+										 'money': amount*100,
+										 'source':	result.token.id,
+										 'type':'信用卡',
+									},
+									success: function (response) {
+											
+										if(response == "succeeded"){
+											alert('支付成功，支付金额'+amount + 'Cad');
+											location.href='/member/index.php?m=pay&ac=record';
+										}else{
+											alert('支付失败');
+											
+										}
+									},
+									error: function () {
+											alert("error");
+									}
+								});
+			
+      //stripeTokenHandler(result.token);
+    }
+  });
+										}
+                });
+
+
+							  
+//                 $("#payment-form").submit(function(event) {
+//                     // disable the submit button to prevent repeated clicks
+//                     $('.submit-button').attr("disabled", "disabled");
+//                     // createToken returns immediately - the supplied callback submits the form if there are no errors
+//                     Stripe.createToken({
+//                         number: $('.card-number').val(),
+//                         cvc: $('.card-cvc').val(),
+//                         exp_month: $('.card-expiry-month').val(),
+//                         exp_year: $('.card-expiry-year').val()
+//                     }, stripeResponseHandler);
+//                     return false; // submit from callback
+//                 });
+            });
+        </script>
 </head>
 <body class="<?php echo $mymps_global['cfg_tpl_dir']; ?>" <?php if($box == 1){?>style="background:none"<?}?>>
 <div class="container">
@@ -33,7 +237,7 @@
 										<div id="msg_success"></div>
 										<div id="msg_error"></div>
 										<div id="msg_alert"></div>
-                                        <form action="?m=pay&ac=pay" target="_blank" method="post">
+                                        <form action="?m=pay&ac=pay" id="payment-form" method="post">
                                         <div class="formgroup topupform">
                                             
                                             <div class="errormsg" id="error" style="display:none"></div>
@@ -54,70 +258,41 @@
                                                     <span class="note" id="paytype"></span>
                                                 </div>
                                             </div>
-                                            <div class="formrow">
-                                                <h3 class="label">请选择付款方式</h3>
-                                                <div class="formrow-enter">
-                                                    <ul class="clearfix paymentlist">
-                                                     <?php 
-                                                     if(is_array($opened_pay_api)){
-                                                     foreach($opened_pay_api as $k => $v){?>
-                                                        <li id="li<?=$v['paytype']?>" <?php if($v['payid'] == 3){?>class="selected"<?php }?>>
-                                                            <label for="payment_<?=$v['paytype']?>" class="image">
-                                                                <img src="template/images/<?=$v['paytype']?>.png" alt="<?=$v['payname']?>" width="160" height="40" onClick="$obj('payment_<?=$v['paytype']?>').checked = true;selPayment();" />
-                                                            </label>
-                                                            <input id="payment_<?=$v['paytype']?>" class="radio" type="radio" name="payid" onClick="selPayment()" value="<?=$v['payid']?>"  <?php if($v['payid'] == 3) echo 'checked="checked"'; ?> />
-                                                            <label for="payment_<?=$v['paytype']?>" class="title"><?=$v['payname']?></label>
-                                                        </li>
-                                                     <?php
-                                                     	}}else{
-                                                        ?>
-                                                        <font color="red">请联系网站客服为您充值</font>
-                                                     <?
-                                                     }
-                                                     ?>
-                                                     
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <script type="text/javascript">
-                                                function selPayment() {
-                                                    var varPayment = document.getElementsByName("payid");
-                                                    for (i = 0; i < varPayment.length; i++) {
-                                                        if (varPayment[i].checked) {
-                                                            switch (varPayment[i].value) {
-                                                                case "3":
-                                                                    setCssClass("lialipay", "selected");
-                                                                    setCssClass("litenpay", "");
-                                                                    setCssClass("lichinabank", "");
-                                                                    $obj('paytype').innerHTML = '(你选择了支付宝支付)';
-                                                                    break;
-                                                                case "1":
-                                                                    setCssClass("lialipay", "");
-                                                                    setCssClass("litenpay", "selected");
-                                                                    setCssClass("lichinabank", "");
-                                                                    $obj('paytype').innerHTML = '(你选择了财付通支付)';
-                                                                    break;
-                                                                case "2":
-                                                                    setCssClass("lialipay", "");
-                                                                    setCssClass("litenpay", "");
-                                                                    setCssClass("lichinabank", "selected");
-                                                                    $obj('paytype').innerHTML = '(你选择了网银在线支付)';
-                                                                    break;
-                                                                default:
-                                                                    break;
-                                                            }
-                                                        }
-                                                    }
-                                                }
-    
-                                                function setCssClass(id, className) {
-                                                    var element = document.getElementById(id);
-                                                    if (element != null)
-                                                        element.className = className;
-                                                }
-                                             
-                                            </script>
-                                            <div class="formrow formrow-action"> 
+																					
+																							<div class="radio" style="width:100px; float:left">
+																								<label><input type="radio" name="payment_type" value=1 checked="checked">支付宝</label>
+																							</div>
+																							<div class="radio" style="width:100px; float:left">
+																								<label><input type="radio" name="payment_type" value=2>信用卡</label>
+																							</div>
+																					
+																					
+																					<div id="alipay" style="margin-top:60px">
+																					  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEdo76SRLO8JGYkqlendOAP32PqcngWHEaePqDk3hgZGDnhx3O">
+																					</div>
+																					<div id="credit-card" style="display:none;margin-top:60px">
+  <div class="form-row">
+    <label for="card-element">
+      Credit or debit card
+    </label>
+    <div id="card-element">
+      <!-- A Stripe Element will be inserted here. -->
+    </div>
+
+    <!-- Used to display form errors. -->
+    <div id="card-errors" role="alert"></div>
+  </div>
+																					</div>
+																					
+																					
+
+																					
+																					<div style="margin-top:10px">
+																					</div>
+																					
+
+        
+                                            <div class="formrow formrow-action"style="margin-top:60px"> 
                                                 <span class="minbtn-wrap"><span class="btn">
                                                 <input class="button" type="submit" name="pay_submit" id="confirmResult" onClick="return checkInput();" value="确认充值" <?php if(!is_array($opened_pay_api)){?>disabled<?}?>/>
                                                 </span>

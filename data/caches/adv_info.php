@@ -27,14 +27,14 @@ $data = array (
 <a style="float:left; width:19%;padding:0px 5px;" href="" target="_blank"><img src="https://dummyimage.com/200x70&text=AD" width="100%" border="0"></a>
 <a style="float:left; width:19%;padding:0px 5px;" href="" target="_blank"><img src="https://dummyimage.com/200x70&text=AD" width="100%" border="0"></a>
 <a style="float:left; width:19%;padding:0px 5px;" href="" target="_blank"><img src="https://dummyimage.com/200x70&text=AD" width="100%" border="0"></a>',
-    41 => '<a target="_blank" href="http://www.mymps.com.cn/goumai.php">二手 空调 淘宝网www.taobao.com - 网购首选。</a> <br>2011新款新潮流，新品发布淘宝网春夏特辑，限时优惠，赶快加入',
+    41 => '<a target="_blank" href="/">二手 空调 淘宝网www.taobao.com - 网购首选。</a> <br>2011新款新潮流，新品发布淘宝网春夏特辑，限时优惠，赶快加入',
     43 => '<a href="http://www.mymps.com.cn" target="_blank">二手车摩托车 www.mymps.com.cn</a><br>
 一淘巨优惠，折扣宝典，教你省钱！免费领 返现金 1折包邮。折扣享不停',
     42 => '<a href="http://www.mymps.com.cn">宠物犬 分类信息网 www.mayicms.com</a> <br />
 宠物犬专卖，百万商品超值价淘你喜欢！惊喜低价，时尚购物新体验',
     44 => '<a href="http://demo.mymps.com.cn" target="_blank">二手 空调 淘宝网www.taobao.com</a> <br /> 网购首选。2011新款新潮流，新品发布淘宝网春夏特辑，限时优惠，赶快加入',
-    45 => '<a href="http://bbs.mymps.com.cn" target="_blank">挥泪 美的 二匹空调 全新机 急转 发票齐全 www.tmall.com</a> <br> 汇集各大品牌网络旗舰店，品牌直销品质保证，折扣包邮，7天无理由退换货',
-    46 => '<a href="http://www.mymps.com.cn/goumai.php" target="_blank">2011款Jeep牧马人现41.89万起www.Jeep.com.cn</a><br />
+    45 => '<a href="/" target="_blank">挥泪 美的 二匹空调 全新机 急转 发票齐全 www.tmall.com</a> <br> 汇集各大品牌网络旗舰店，品牌直销品质保证，折扣包邮，7天无理由退换货',
+    46 => '<a href="/" target="_blank">2011款Jeep牧马人现41.89万起www.Jeep.com.cn</a><br />
 Jeep牧马人,终极四驱利器,强大的四驱动力.Sahara两门款41.89万;Rubicon两门款47.89万....',
     47 => '<a href="http://www.mymps.com.cn">北京二手车交易价格比较 www.mymps.com.cn</a><br>
 网上郑州二手车交易超值热卖惊喜无处不在 聪明点比较购物',
