@@ -88,7 +88,7 @@
                                 <div class="notice"><ul>该信息联系方式已被隐藏，登录后方可查看!</ul></div>
                             <!--{else}-->
                                 <!--{if $info[contactview] == 1}-->
-                                {if $info[qq]}<li><span>Q Q：</span><font class="tel">{$info[qqnum]}</font><a class="_chat" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin={$info[qq]}&site=qq&menu=yes">QQ在线交谈</a></li>{/if}
+                                {if $info[qq]}<li><span>微信：</span><font class="tel">{$info[qqnum]}</font></li>{/if}
                                 {if $info[email]}<li><span>邮箱：</span><font class="tel">{$info[email]}</font></li>{/if}
                                 <li><span>联系人：</span><font class="tel">{$info[contact_who]}</font></li>
                                 <li class="qqbm"><span>电话：</span><font class="tel red">{$info[telephone]}</font> <a rel="nofollow" href="javascript:void(0);" onclick="setbg('查看完整电话',420,330,'{$mymps_global[SiteUrl]}/box.php?part=seecontact_tel&id={$info[id]}&tel_base64={$info[tel_base64]}')" class="_qq">点击查看完整号码</a></li>

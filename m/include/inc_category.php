@@ -58,6 +58,49 @@ $parentcats = is_array($parentcats) ? array_reverse($parentcats) : '';
 
 //构造SQL
 $sq = $s = '';
+
+// $modlist = $db->getall("SELECT distinct modid FROM my_category WHERE parentid = '$catid'");
+// $modlist = array_map(function ($v) {
+// 		return($v[0]);
+// }, $modlist);
+
+
+
+// $start = 1;
+// $final = array();
+// foreach ($modlist as &$value) {
+//     $sql1 = "SHOW COLUMNS FROM `{$db_mymps}information_{$value}`";
+// 		$result = $db->getAll($sql1);
+// 		$result = array_map(function ($v) {
+// 				return($v[0]);
+// 		}, $result);
+// 	  if ($start == 1){
+// 			$final = $result;
+// 		}else {
+// 	  	$final=array_intersect($final,$result);
+// 		}
+// 	  $start++;
+// }
+// $start = 1;
+// foreach ($final as &$value) {
+// 		if ($start == 1){
+// 			$union_query = "`".$value."`";
+// 		} else{
+// 			$union_query .= ",`".$value."`";
+// 		}
+// 	  $start++;
+// }
+// $start = 1;
+// foreach ($modlist as &$value) {
+// 		if ($start == 1){
+// 			$final_union_query = "select ".$union_query." from `{$db_mymps}information_{$value}`";
+// 		} else{
+// 			$final_union_query .= 'union all '."select ".$union_query." from `{$db_mymps}information_{$value}`";
+// 		}
+// 	  $start++;
+// }
+// var_dump($final_union_query);
+
 if($cat['modid'] > 1){
 	$s = "";
 	foreach ($_GET as $key => $val){
@@ -75,6 +118,7 @@ if($cat['modid'] > 1){
 		}
 	}
 }
+
 $cate_limit = $cat['parentid'] > 0 ? " AND ".get_children($catid) : " AND a.gid = '$catid'";
 $lat =(float)$lat;
 $lng = (float)$lng;

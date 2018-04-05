@@ -337,19 +337,19 @@ $data = array (
         1 => 
         array (
           'id' => '1~2',
-          'name' => '1~2元/平米/天',
+          'name' => '1~2加元/平米/天',
           'identifier' => 'min_rent',
         ),
         2 => 
         array (
           'id' => '2~4',
-          'name' => '2~4元/平米/天',
+          'name' => '2~4加元/平米/天',
           'identifier' => 'min_rent',
         ),
         3 => 
         array (
           'id' => '4~',
-          'name' => '4元以上/平米/天',
+          'name' => '4加元以上/平米/天',
           'identifier' => 'min_rent',
         ),
       ),
@@ -493,32 +493,32 @@ $data = array (
         ),
         1 => 
         array (
-          'id' => '1~1000',
-          'name' => '1000以内',
+          'id' => '1~500',
+          'name' => '500以内',
           'identifier' => 'mini_rent',
         ),
         2 => 
         array (
-          'id' => '1000~3000',
-          'name' => '1000~3000',
+          'id' => '500~1000',
+          'name' => '500~1000',
           'identifier' => 'mini_rent',
         ),
         3 => 
         array (
-          'id' => '3000~5000',
-          'name' => '3000~5000',
+          'id' => '1000~1500',
+          'name' => '1000~1500',
           'identifier' => 'mini_rent',
         ),
         4 => 
         array (
-          'id' => '5000~10000',
-          'name' => '5000~10000',
+          'id' => '1500~2000',
+          'name' => '1500~2000',
           'identifier' => 'mini_rent',
         ),
         5 => 
         array (
-          'id' => '10000~',
-          'name' => '10000以上',
+          'id' => '2000~',
+          'name' => '2000以上',
           'identifier' => 'mini_rent',
         ),
       ),
@@ -815,32 +815,32 @@ $data = array (
         ),
         1 => 
         array (
-          'id' => '1~1000',
-          'name' => '1000以内',
+          'id' => '1~100',
+          'name' => '100以内',
           'identifier' => 'price',
         ),
         2 => 
         array (
-          'id' => '1000~3000',
-          'name' => '1000~3000',
+          'id' => '100~500',
+          'name' => '100~500',
           'identifier' => 'price',
         ),
         3 => 
         array (
-          'id' => '3000~5000',
-          'name' => '3000~5000',
+          'id' => '500~1000',
+          'name' => '500~1000',
           'identifier' => 'price',
         ),
         4 => 
         array (
-          'id' => '5000~10000',
-          'name' => '5000~10000',
+          'id' => '1000~5000',
+          'name' => '1000~5000',
           'identifier' => 'price',
         ),
         5 => 
         array (
-          'id' => '10000~',
-          'name' => '10000以上',
+          'id' => '5000~',
+          'name' => '5000以上',
           'identifier' => 'price',
         ),
       ),
@@ -962,32 +962,32 @@ $data = array (
         ),
         1 => 
         array (
-          'id' => '1~1000',
-          'name' => '1000以内',
+          'id' => '1~100',
+          'name' => '100以内',
           'identifier' => 'price',
         ),
         2 => 
         array (
-          'id' => '1000~3000',
-          'name' => '1000~3000',
+          'id' => '100~500',
+          'name' => '100~500',
           'identifier' => 'price',
         ),
         3 => 
         array (
-          'id' => '3000~5000',
-          'name' => '3000~5000',
+          'id' => '500~1000',
+          'name' => '500~1000',
           'identifier' => 'price',
         ),
         4 => 
         array (
-          'id' => '5000~10000',
-          'name' => '5000~10000',
+          'id' => '1000~5000',
+          'name' => '1000~5000',
           'identifier' => 'price',
         ),
         5 => 
         array (
-          'id' => '10000~',
-          'name' => '10000以上',
+          'id' => '5000~',
+          'name' => '5000以上',
           'identifier' => 'price',
         ),
       ),
@@ -1054,58 +1054,6 @@ $data = array (
   ),
   16 => 
   array (
-    13 => 
-    array (
-      'title' => '价格',
-      'type' => 'number',
-      'identifier' => 'prices',
-      'publish' => '<input name="prices[min]" class="input" type="text" style="width:50px"> 至 <input  name="prices[max]" class="input" type="text" style="width:50px; float:none;"> ',
-      'list' => 
-      array (
-        0 => 
-        array (
-          'id' => 0,
-          'name' => '不限',
-          'identifier' => 'prices',
-        ),
-        1 => 
-        array (
-          'id' => '1~5',
-          'name' => '5万以内',
-          'identifier' => 'prices',
-        ),
-        2 => 
-        array (
-          'id' => '5~10',
-          'name' => '5万~10万',
-          'identifier' => 'prices',
-        ),
-        3 => 
-        array (
-          'id' => '10~50',
-          'name' => '10万~50万',
-          'identifier' => 'prices',
-        ),
-        4 => 
-        array (
-          'id' => '50~100',
-          'name' => '50万~100万',
-          'identifier' => 'prices',
-        ),
-        5 => 
-        array (
-          'id' => '100~300',
-          'name' => '100万~300万',
-          'identifier' => 'prices',
-        ),
-        6 => 
-        array (
-          'id' => '300~',
-          'name' => '300万以上',
-          'identifier' => 'prices',
-        ),
-      ),
-    ),
     58 => 
     array (
       'list' => 
@@ -1173,6 +1121,52 @@ $data = array (
       'type' => 'radio',
       'identifier' => 'from',
       'publish' => '<label for="from0"><input id="from0" name="extra[from]" type="radio" class="radio" value="0"checked>不限</label> <label for="from1"><input id="from1" name="extra[from]" type="radio" class="radio" value="1">个人</label> <label for="from2"><input id="from2" name="extra[from]" type="radio" class="radio" value="2">商家</label> ',
+    ),
+    9 => 
+    array (
+      'title' => '价格',
+      'type' => 'number',
+      'identifier' => 'price',
+      'publish' => '<input name="price[min]" class="input" type="text" style="width:50px"> 至 <input  name="price[max]" class="input" type="text" style="width:50px; float:none;"> ',
+      'list' => 
+      array (
+        0 => 
+        array (
+          'id' => 0,
+          'name' => '不限',
+          'identifier' => 'price',
+        ),
+        1 => 
+        array (
+          'id' => '1~100',
+          'name' => '100以内',
+          'identifier' => 'price',
+        ),
+        2 => 
+        array (
+          'id' => '100~500',
+          'name' => '100~500',
+          'identifier' => 'price',
+        ),
+        3 => 
+        array (
+          'id' => '500~1000',
+          'name' => '500~1000',
+          'identifier' => 'price',
+        ),
+        4 => 
+        array (
+          'id' => '1000~5000',
+          'name' => '1000~5000',
+          'identifier' => 'price',
+        ),
+        5 => 
+        array (
+          'id' => '5000~',
+          'name' => '5000以上',
+          'identifier' => 'price',
+        ),
+      ),
     ),
   ),
   15 => 
@@ -1408,32 +1402,32 @@ $data = array (
         ),
         1 => 
         array (
-          'id' => '1~1000',
-          'name' => '1000以内',
+          'id' => '1~100',
+          'name' => '100以内',
           'identifier' => 'price',
         ),
         2 => 
         array (
-          'id' => '1000~3000',
-          'name' => '1000~3000',
+          'id' => '100~500',
+          'name' => '100~500',
           'identifier' => 'price',
         ),
         3 => 
         array (
-          'id' => '3000~5000',
-          'name' => '3000~5000',
+          'id' => '500~1000',
+          'name' => '500~1000',
           'identifier' => 'price',
         ),
         4 => 
         array (
-          'id' => '5000~10000',
-          'name' => '5000~10000',
+          'id' => '1000~5000',
+          'name' => '1000~5000',
           'identifier' => 'price',
         ),
         5 => 
         array (
-          'id' => '10000~',
-          'name' => '10000以上',
+          'id' => '5000~',
+          'name' => '5000以上',
           'identifier' => 'price',
         ),
       ),
@@ -1497,32 +1491,32 @@ $data = array (
         ),
         1 => 
         array (
-          'id' => '1~1000',
-          'name' => '1000以内',
+          'id' => '1~100',
+          'name' => '100以内',
           'identifier' => 'price',
         ),
         2 => 
         array (
-          'id' => '1000~3000',
-          'name' => '1000~3000',
+          'id' => '100~500',
+          'name' => '100~500',
           'identifier' => 'price',
         ),
         3 => 
         array (
-          'id' => '3000~5000',
-          'name' => '3000~5000',
+          'id' => '500~1000',
+          'name' => '500~1000',
           'identifier' => 'price',
         ),
         4 => 
         array (
-          'id' => '5000~10000',
-          'name' => '5000~10000',
+          'id' => '1000~5000',
+          'name' => '1000~5000',
           'identifier' => 'price',
         ),
         5 => 
         array (
-          'id' => '10000~',
-          'name' => '10000以上',
+          'id' => '5000~',
+          'name' => '5000以上',
           'identifier' => 'price',
         ),
       ),
@@ -1959,32 +1953,32 @@ $data = array (
         ),
         1 => 
         array (
-          'id' => '1~1000',
-          'name' => '1000以内',
+          'id' => '1~100',
+          'name' => '100以内',
           'identifier' => 'price',
         ),
         2 => 
         array (
-          'id' => '1000~3000',
-          'name' => '1000~3000',
+          'id' => '100~500',
+          'name' => '100~500',
           'identifier' => 'price',
         ),
         3 => 
         array (
-          'id' => '3000~5000',
-          'name' => '3000~5000',
+          'id' => '500~1000',
+          'name' => '500~1000',
           'identifier' => 'price',
         ),
         4 => 
         array (
-          'id' => '5000~10000',
-          'name' => '5000~10000',
+          'id' => '1000~5000',
+          'name' => '1000~5000',
           'identifier' => 'price',
         ),
         5 => 
         array (
-          'id' => '10000~',
-          'name' => '10000以上',
+          'id' => '5000~',
+          'name' => '5000以上',
           'identifier' => 'price',
         ),
       ),
@@ -2185,37 +2179,37 @@ $data = array (
         1 => 
         array (
           'id' => '1~20',
-          'name' => '20元以内/天',
+          'name' => '20加元以内/天',
           'identifier' => 'day_salary',
         ),
         2 => 
         array (
           'id' => '20~50',
-          'name' => '20~50元/天',
+          'name' => '20~50加元/天',
           'identifier' => 'day_salary',
         ),
         3 => 
         array (
           'id' => '50~100',
-          'name' => '50~100元/天',
+          'name' => '50~100加元/天',
           'identifier' => 'day_salary',
         ),
         4 => 
         array (
           'id' => '100~300',
-          'name' => '100~300元/天',
+          'name' => '100~300加元/天',
           'identifier' => 'day_salary',
         ),
         5 => 
         array (
           'id' => '300~500',
-          'name' => '300~500元/天',
+          'name' => '300~500加元/天',
           'identifier' => 'day_salary',
         ),
         6 => 
         array (
           'id' => '500~',
-          'name' => '500元以上/天',
+          'name' => '500加元以上/天',
           'identifier' => 'day_salary',
         ),
       ),
@@ -2440,32 +2434,32 @@ $data = array (
         ),
         1 => 
         array (
-          'id' => '1~1000',
-          'name' => '1000以内',
+          'id' => '1~100',
+          'name' => '100以内',
           'identifier' => 'price',
         ),
         2 => 
         array (
-          'id' => '1000~3000',
-          'name' => '1000~3000',
+          'id' => '100~500',
+          'name' => '100~500',
           'identifier' => 'price',
         ),
         3 => 
         array (
-          'id' => '3000~5000',
-          'name' => '3000~5000',
+          'id' => '500~1000',
+          'name' => '500~1000',
           'identifier' => 'price',
         ),
         4 => 
         array (
-          'id' => '5000~10000',
-          'name' => '5000~10000',
+          'id' => '1000~5000',
+          'name' => '1000~5000',
           'identifier' => 'price',
         ),
         5 => 
         array (
-          'id' => '10000~',
-          'name' => '10000以上',
+          'id' => '5000~',
+          'name' => '5000以上',
           'identifier' => 'price',
         ),
       ),
@@ -2545,32 +2539,32 @@ $data = array (
         ),
         1 => 
         array (
-          'id' => '1~1000',
-          'name' => '1000以内',
+          'id' => '1~100',
+          'name' => '100以内',
           'identifier' => 'price',
         ),
         2 => 
         array (
-          'id' => '1000~3000',
-          'name' => '1000~3000',
+          'id' => '100~500',
+          'name' => '100~500',
           'identifier' => 'price',
         ),
         3 => 
         array (
-          'id' => '3000~5000',
-          'name' => '3000~5000',
+          'id' => '500~1000',
+          'name' => '500~1000',
           'identifier' => 'price',
         ),
         4 => 
         array (
-          'id' => '5000~10000',
-          'name' => '5000~10000',
+          'id' => '1000~5000',
+          'name' => '1000~5000',
           'identifier' => 'price',
         ),
         5 => 
         array (
-          'id' => '10000~',
-          'name' => '10000以上',
+          'id' => '5000~',
+          'name' => '5000以上',
           'identifier' => 'price',
         ),
       ),
@@ -2704,32 +2698,32 @@ $data = array (
         ),
         1 => 
         array (
-          'id' => '1~1000',
-          'name' => '1000以内',
+          'id' => '1~100',
+          'name' => '100以内',
           'identifier' => 'price',
         ),
         2 => 
         array (
-          'id' => '1000~3000',
-          'name' => '1000~3000',
+          'id' => '100~500',
+          'name' => '100~500',
           'identifier' => 'price',
         ),
         3 => 
         array (
-          'id' => '3000~5000',
-          'name' => '3000~5000',
+          'id' => '500~1000',
+          'name' => '500~1000',
           'identifier' => 'price',
         ),
         4 => 
         array (
-          'id' => '5000~10000',
-          'name' => '5000~10000',
+          'id' => '1000~5000',
+          'name' => '1000~5000',
           'identifier' => 'price',
         ),
         5 => 
         array (
-          'id' => '10000~',
-          'name' => '10000以上',
+          'id' => '5000~',
+          'name' => '5000以上',
           'identifier' => 'price',
         ),
       ),
@@ -2881,32 +2875,32 @@ $data = array (
         ),
         1 => 
         array (
-          'id' => '1~1000',
-          'name' => '1000以内',
+          'id' => '1~100',
+          'name' => '100以内',
           'identifier' => 'price',
         ),
         2 => 
         array (
-          'id' => '1000~3000',
-          'name' => '1000~3000',
+          'id' => '100~500',
+          'name' => '100~500',
           'identifier' => 'price',
         ),
         3 => 
         array (
-          'id' => '3000~5000',
-          'name' => '3000~5000',
+          'id' => '500~1000',
+          'name' => '500~1000',
           'identifier' => 'price',
         ),
         4 => 
         array (
-          'id' => '5000~10000',
-          'name' => '5000~10000',
+          'id' => '1000~5000',
+          'name' => '1000~5000',
           'identifier' => 'price',
         ),
         5 => 
         array (
-          'id' => '10000~',
-          'name' => '10000以上',
+          'id' => '5000~',
+          'name' => '5000以上',
           'identifier' => 'price',
         ),
       ),

@@ -133,7 +133,7 @@
                         <ul class="slide">
                         <?php if(is_array($focus)){foreach($focus as $k) { ?>                        <li>
                         <div class="wnum auto">
-                        <a href="<?=$k['url']?>" class="sel" rel="nofollow"><img  src="<?=$mymps_global['SiteUrl']?><?=$k['image']?>" alt="<?=$k['words']?>" data-color=""/></a>
+                        <a href="<?=$k['url']?>" class="sel" rel="nofollow"><img  src="<?=$k['image']?>" alt="<?=$k['words']?>" data-color=""/></a>
                         </div>
                         </li>
                         <?php }} ?>

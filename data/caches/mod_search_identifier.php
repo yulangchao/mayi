@@ -75,9 +75,9 @@ $data = array (
   array (
     'identifier' => 
     array (
-      0 => 'prices',
-      1 => 'new_old',
-      2 => 'from',
+      0 => 'new_old',
+      1 => 'from',
+      2 => 'price',
     ),
   ),
   15 => 

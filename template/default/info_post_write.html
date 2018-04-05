@@ -132,7 +132,7 @@
             <div class="p-line">
                 <label class="p-label"><span class="red required">*</span>  联系人：</label>
                 <div class="publish-detail-item">
-                    <input name="contact_who" type="text" class="input input-large" value="{$post[contact_who]}" require="true" datatype="chinese" msg="请填写您的称呼，如刘女士"/>
+                    <input name="contact_who" type="text" class="input input-large" value="{$post[contact_who]}" require="true" msg="请填写您的称呼，如刘女士"/>
                 </div>
             </div>
             
@@ -144,18 +144,18 @@
             </div>
             
             <div class="p-line">
-                <label class="p-label">  联系QQ：</label>
+                <label class="p-label">  联系微信：</label>
                 <div class="publish-detail-item">
-                    <input name="qq" type="text" class="input input-large" value="{$post[qq]}" require="qq" datatype="qq" msg="请填写准确的QQ号，形式如123456"/>
+                    <input name="qq" type="text" class="input input-large" value="{$post[qq]}"/>
                 </div>
             </div>
             
-            <!--<div class="p-line">
+            <div class="p-line">
                 <label class="p-label">电子邮箱：</label>
                 <div class="publish-detail-item">
                     <input name="email" type="text" class="input input-large" value="{$post[email]}" require="email" datatype="email" msg="请填写准确的电子邮箱帐号">
                 </div>
-            </div>-->
+            </div>
         </div>
         <!--{if $post[action] == 'input' && $post[ismember] != 1}-->
 		<div class="p-line">

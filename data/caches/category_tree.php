@@ -1196,130 +1196,6 @@ $data = array (
       ),
     ),
   ),
-  10 => 
-  array (
-    'catid' => '10',
-    'catname' => '教育培训',
-    'color' => '',
-    'if_view' => '2',
-    'dir_typename' => 'jiaoyu',
-    'uri' => 'category.php?catid=10',
-    'usecoin' => '0',
-    'icon' => '/template/default/images/index/icon_edu.gif',
-    'children' => 
-    array (
-      137 => 
-      array (
-        'catid' => '137',
-        'catname' => '职业培训',
-        'if_view' => '2',
-        'color' => '',
-        'dir_typename' => 'zhiyepeixun',
-        'uri' => 'category.php?catid=137',
-        'usecoin' => '0',
-      ),
-      138 => 
-      array (
-        'catid' => '138',
-        'catname' => '外语培训',
-        'if_view' => '2',
-        'color' => '',
-        'dir_typename' => 'waiyu',
-        'uri' => 'category.php?catid=138',
-        'usecoin' => '0',
-      ),
-      139 => 
-      array (
-        'catid' => '139',
-        'catname' => '学历教育',
-        'if_view' => '2',
-        'color' => '',
-        'dir_typename' => 'xueli',
-        'uri' => 'category.php?catid=139',
-        'usecoin' => '0',
-      ),
-      140 => 
-      array (
-        'catid' => '140',
-        'catname' => '家教',
-        'if_view' => '2',
-        'color' => '',
-        'dir_typename' => 'jiajiao',
-        'uri' => 'category.php?catid=140',
-        'usecoin' => '0',
-      ),
-      141 => 
-      array (
-        'catid' => '141',
-        'catname' => 'IT培训',
-        'if_view' => '2',
-        'color' => '',
-        'dir_typename' => 'jisuanji',
-        'uri' => 'category.php?catid=141',
-        'usecoin' => '0',
-      ),
-      142 => 
-      array (
-        'catid' => '142',
-        'catname' => '留学签证',
-        'if_view' => '2',
-        'color' => '',
-        'dir_typename' => 'liuxue',
-        'uri' => 'category.php?catid=142',
-        'usecoin' => '0',
-      ),
-      143 => 
-      array (
-        'catid' => '143',
-        'catname' => '高等教育',
-        'if_view' => '2',
-        'color' => '',
-        'dir_typename' => 'gaodengjiaoyu',
-        'uri' => 'category.php?catid=143',
-        'usecoin' => '0',
-      ),
-      144 => 
-      array (
-        'catid' => '144',
-        'catname' => '文体培训',
-        'if_view' => '2',
-        'color' => '',
-        'dir_typename' => 'techang',
-        'uri' => 'category.php?catid=144',
-        'usecoin' => '0',
-      ),
-      145 => 
-      array (
-        'catid' => '145',
-        'catname' => '婴幼儿教育',
-        'if_view' => '2',
-        'color' => '',
-        'dir_typename' => 'youjiao',
-        'uri' => 'category.php?catid=145',
-        'usecoin' => '0',
-      ),
-      146 => 
-      array (
-        'catid' => '146',
-        'catname' => '中小学教育',
-        'if_view' => '2',
-        'color' => '',
-        'dir_typename' => 'zhongxiaoxue',
-        'uri' => 'category.php?catid=146',
-        'usecoin' => '0',
-      ),
-      147 => 
-      array (
-        'catid' => '147',
-        'catname' => '其他培训',
-        'if_view' => '2',
-        'color' => '',
-        'dir_typename' => 'qitapeixun',
-        'uri' => 'category.php?catid=147',
-        'usecoin' => '0',
-      ),
-    ),
-  ),
   244 => 
   array (
     'catid' => '244',
@@ -1500,6 +1376,130 @@ $data = array (
         'color' => '',
         'dir_typename' => 'qitashangwu',
         'uri' => 'category.php?catid=245',
+        'usecoin' => '0',
+      ),
+    ),
+  ),
+  10 => 
+  array (
+    'catid' => '10',
+    'catname' => '教育培训',
+    'color' => '',
+    'if_view' => '2',
+    'dir_typename' => 'jiaoyu',
+    'uri' => 'category.php?catid=10',
+    'usecoin' => '0',
+    'icon' => '/template/default/images/index/icon_edu.gif',
+    'children' => 
+    array (
+      137 => 
+      array (
+        'catid' => '137',
+        'catname' => '职业培训',
+        'if_view' => '2',
+        'color' => '',
+        'dir_typename' => 'zhiyepeixun',
+        'uri' => 'category.php?catid=137',
+        'usecoin' => '0',
+      ),
+      138 => 
+      array (
+        'catid' => '138',
+        'catname' => '外语培训',
+        'if_view' => '2',
+        'color' => '',
+        'dir_typename' => 'waiyu',
+        'uri' => 'category.php?catid=138',
+        'usecoin' => '0',
+      ),
+      139 => 
+      array (
+        'catid' => '139',
+        'catname' => '学历教育',
+        'if_view' => '2',
+        'color' => '',
+        'dir_typename' => 'xueli',
+        'uri' => 'category.php?catid=139',
+        'usecoin' => '0',
+      ),
+      140 => 
+      array (
+        'catid' => '140',
+        'catname' => '家教',
+        'if_view' => '2',
+        'color' => '',
+        'dir_typename' => 'jiajiao',
+        'uri' => 'category.php?catid=140',
+        'usecoin' => '0',
+      ),
+      141 => 
+      array (
+        'catid' => '141',
+        'catname' => 'IT培训',
+        'if_view' => '2',
+        'color' => '',
+        'dir_typename' => 'jisuanji',
+        'uri' => 'category.php?catid=141',
+        'usecoin' => '0',
+      ),
+      142 => 
+      array (
+        'catid' => '142',
+        'catname' => '留学签证',
+        'if_view' => '2',
+        'color' => '',
+        'dir_typename' => 'liuxue',
+        'uri' => 'category.php?catid=142',
+        'usecoin' => '0',
+      ),
+      143 => 
+      array (
+        'catid' => '143',
+        'catname' => '高等教育',
+        'if_view' => '2',
+        'color' => '',
+        'dir_typename' => 'gaodengjiaoyu',
+        'uri' => 'category.php?catid=143',
+        'usecoin' => '0',
+      ),
+      144 => 
+      array (
+        'catid' => '144',
+        'catname' => '文体培训',
+        'if_view' => '2',
+        'color' => '',
+        'dir_typename' => 'techang',
+        'uri' => 'category.php?catid=144',
+        'usecoin' => '0',
+      ),
+      145 => 
+      array (
+        'catid' => '145',
+        'catname' => '婴幼儿教育',
+        'if_view' => '2',
+        'color' => '',
+        'dir_typename' => 'youjiao',
+        'uri' => 'category.php?catid=145',
+        'usecoin' => '0',
+      ),
+      146 => 
+      array (
+        'catid' => '146',
+        'catname' => '中小学教育',
+        'if_view' => '2',
+        'color' => '',
+        'dir_typename' => 'zhongxiaoxue',
+        'uri' => 'category.php?catid=146',
+        'usecoin' => '0',
+      ),
+      147 => 
+      array (
+        'catid' => '147',
+        'catname' => '其他培训',
+        'if_view' => '2',
+        'color' => '',
+        'dir_typename' => 'qitapeixun',
+        'uri' => 'category.php?catid=147',
         'usecoin' => '0',
       ),
     ),
