@@ -105,7 +105,7 @@ function checkSubmit()
       <td><input name="msn" type="text" class="text" value="<?=$edit[msn]?>"/> </td>
      </tr>
  	<tr bgcolor="#ffffff">
-      <td height="30">机构网址：</td>
+      <td height="30">商家网址：</td>
       <td><input name="web" type="text" class="text" value="<?=$edit[web]?>"/> 请以 http:// 开始</td>
      </tr>
  	<tr bgcolor="#ffffff">

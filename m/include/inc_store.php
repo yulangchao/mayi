@@ -7,7 +7,7 @@ if(!in_array($action,array_keys($navi))) $action = 'index';
 
 $store = $db ->getRow("SELECT * FROM `{$db_mymps}member` WHERE if_corp = 1 AND status = 1 AND id = '$id'");
 $store[tel]=$store[tel]?$store[tel]:$store[mobile];
-if(!$store) errormsg('该机构不存在或者未通过审核！');
+if(!$store) errormsg('该商家不存在或者未通过审核！');
 
 if($action == 'index'){
 	$info_list = mymps_get_infos('5','','',$store['userid']);
@@ -31,7 +31,7 @@ if($action == 'index'){
 	
 	if($docuid){
 		if(!$docu = $db->getRow("SELECT * FROM `{$db_mymps}member_docu` WHERE id = '$docuid' AND userid = '$store[userid]'")){
-			redirectmsg('该机构动态不存在！','javascript:history.back();');
+			redirectmsg('该商家动态不存在！','javascript:history.back();');
 		}
 		$db->query("UPDATE `{$db_mymps}member_docu` SET hit = hit + 1 WHERE id = '$docuid' AND userid = '$store[userid]'");
 	}else{

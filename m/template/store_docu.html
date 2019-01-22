@@ -2,7 +2,7 @@
 <html lang="zh-CN" class="index_page">
 <head>
 	{template header}
-	<title>机构动态 - 商家店铺 - {$mymps_global[SiteName]}</title>
+	<title>商家动态 - 商家店铺 - {$mymps_global[SiteName]}</title>
 	<link type="text/css" rel="stylesheet" href="template/css/global.css">
 	<link type="text/css" rel="stylesheet" href="template/css/style.css">
     <link type="text/css" rel="stylesheet" href="template/css/store.css">
@@ -17,7 +17,7 @@
     
     <div class="mbox userintro">
     {if !$docuid}
-    	<p class="mbox_t" pagetitle="机构动态"> <a href="javascript:void(0)"> <b>机构动态</b> </a> </p>
+    	<p class="mbox_t" pagetitle="商家动态"> <a href="javascript:void(0)"> <b>商家动态</b> </a> </p>
         <ul class="infolst">
        {loop $list $mymps}
         <li class="linkdetail" onclick="javascript:window.location.href='index.php?mod=store&id={$store[id]}&action=docu&docuid={$mymps[id]}'" pageTitle="详情">
@@ -25,7 +25,7 @@
                 <dd class="tm"> {echo GetTime($mymps[pubtime],'m-d')}</dd>
         </li>
        {loopelse}
-        <li class="linkdetail">没有找到相关的机构动态！</li>
+        <li class="linkdetail">没有找到相关的商家动态！</li>
        {/loop}
         </ul>
     {else}

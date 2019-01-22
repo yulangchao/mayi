@@ -27,7 +27,7 @@
     <div id="mask" onclick="maskHide();"></div>
 
 	<div class="dl_nav" style="display:none;">
-		<span><a href="index.php">首页</a><font class="raquo"></font><a href="index.php?mod=corp">商家机构</a>
+		<span><a href="index.php">首页</a><font class="raquo"></font><a href="index.php?mod=corp">商家商家</a>
         {loop $parentcats $mymps}
         <font class="raquo"></font><a href="index.php?mod=corp&cityid={$cityid}&catid={$mymps[corpid]}">{$mymps[corpname]}</a>
         {/loop}
@@ -151,7 +151,7 @@
         </a>
     </li>
     {loopelse}
-    <li style="padding:50px 0; text-align:center;">没有找到相关机构店铺！<a href="javascript:history.back(-1);">返回</a></li>
+    <li style="padding:50px 0; text-align:center;">没有找到相关商家店铺！<a href="javascript:history.back(-1);">返回</a></li>
     {/loop}
     {if $member}
 	<div class="pager" style="border-top:none;border-bottom:1px #ddd solid;">

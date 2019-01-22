@@ -5,7 +5,7 @@ $areaid = isset($areaid) ? intval($areaid) : '';
 $page = isset($page) ? $page : 1;
 if($catid){
 	$corp = $db ->getRow("SELECT * FROM `{$db_mymps}corp` WHERE corpid = '$catid'");
-	if(!$corp) errormsg('该机构分类不存在！');
+	if(!$corp) errormsg('该商家分类不存在！');
 	$ypcategory = get_corp_tree($corp['parentid'] ? $corp['parentid'] : $catid,'corp');
 	
 	$parentcats = get_parent_cats('corp',$catid);

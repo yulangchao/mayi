@@ -24,7 +24,7 @@
     </tr>
     <? if($row['tname']){?>
     <tr bgcolor="#ffffff">
-        <td class="altbg1">机构名：</td>
+        <td class="altbg1">商家名：</td>
         <td>
             <b><?=$row['tname']?></b>
         </td>

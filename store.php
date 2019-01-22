@@ -49,7 +49,7 @@ if($action != 'dopost'){
 	$where  = "WHERE a.id = '$uid' AND status = '1' AND if_corp = '1'";
 	
 	$store	= $db -> getRow("SELECT a.* FROM `{$db_mymps}member` AS a $where");
-	if(!$store || empty($uid)) write_msg('您指定的机构不存在或者未通过审核！',$mymps_global[SiteUrl].'/corporation.php');
+	if(!$store || empty($uid)) write_msg('您指定的商家不存在或者未通过审核！',$mymps_global[SiteUrl].'/corporation.php');
 	if(!$store['template'] || !in_array($store['template'],array('blue','green','orange','purple','pink'))) $store['template'] = 'blue';
 	
 	$allow_param = array('about','info','document','album','contactus','comment','index','goods');
@@ -260,7 +260,7 @@ if($action != 'dopost'){
 		
 		$album = $db -> getAll("SELECT a.* FROM `{$db_mymps}member_album` AS a  WHERE a.userid='$store[userid]' ORDER BY a.id DESC LIMIT 0,15");
 		$where = " WHERE a.userid = '$store[userid]'";
-		$store['location'] = get_store_location($uri['index'],$store['tname'],'机构首页');
+		$store['location'] = get_store_location($uri['index'],$store['tname'],'商家首页');
 		$goods = mymps_get_goods(8,1,'','',$store['userid']);
 		
 	}

@@ -93,7 +93,7 @@ if($action == 'register'){
 	if($mymps_global['cfg_member_verify'] == 1 || $mymps_global['cfg_member_verify'] == 4){
 		$member_log -> in($userid,md5($userpwd),'off','noredirect');
 		if($reg_corp == 1){
-			redirectmsg('请完善机构资料信息以完成注册！','index.php?mod=member&action=editbase&type=reg');
+			redirectmsg('请完善商家资料信息以完成注册！','index.php?mod=member&action=editbase&type=reg');
 		}else{
 			redirectmsg('恭喜! 您已经注册成功','index.php?mod=member');
 		}

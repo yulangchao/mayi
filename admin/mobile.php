@@ -145,7 +145,7 @@ else if ( $type == "nav" )
             $showcolor = mhtmlspecialchars( trim( $newshowcolor[$key] ) );
             $flag = mhtmlspecialchars( trim( $newflag[$key] ) );
             $flag = $flag ? $flag : "outlink";
-            if ( !$title && !$url )
+            if ( $title && $url )
             {
                 $db->query( "INSERT INTO `".$db_mymps."mobile_nav` (url,title,isview,target,flag,color,displayorder,createtime,typeid) VALUES ('{$url}','{$title}','{$isview}','{$target}','{$flag}','{$showcolor}','{$displayorder}','{$timestamp}','1')" );
             }
@@ -182,7 +182,7 @@ else if ( $type == "nav_ico" )
             $target = "_self";
             $showcolor = trim( $newshowcolor[$key] );
             $flag = "";
-            if ( !$title && !$url )
+            if ( $title && $url )
             {
                 $db->query( "INSERT INTO `".$db_mymps."mobile_nav` (url,ico,title,isview,target,flag,color,displayorder,createtime,typeid) VALUES ('{$url}','{$ico}','{$title}','{$isview}','{$target}','{$flag}','{$showcolor}','{$displayorder}','{$timestamp}','2')" );
             }

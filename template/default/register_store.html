@@ -12,6 +12,13 @@
 <script type="text/javascript" src="{$mymps_global[SiteUrl]}/template/default/js/validator.js"></script> 
 <script type="text/javascript" src="{$mymps_global[SiteUrl]}/template/default/js/sendsms{echo $mymps_imgcode == 1 ? '' : 2;}.js"></script>
 <title>{$page_title}</title>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-3402764854341410",
+    enable_page_level_ads: true
+  });
+</script>
 </head>
 
 <body class="{$mymps_global[cfg_tpl_dir]} bodybg{$mymps_global[cfg_tpl_dir]}{$mymps_global[bodybg]}">
@@ -22,7 +29,7 @@
 		<div class="registerpart">
 			<div class="step2">
 				<span>1. 选择注册类型<a href="{$mymps_global[SiteUrl]}/{$mymps_global[cfg_member_logfile]}?mod=register">（点此重选）</a></span>
-				<span class="cur">2. 注册机构会员</span>
+				<span class="cur">2. 注册商家会员</span>
 				<span>3. 登录会员中心</span>
 			</div>
 			<div class="regdetail">
@@ -95,13 +102,13 @@
 				</div>
 				<div class="clear"></div>
 				<div class="partname">
-					<div class="li1"><a class="current">机构资料</a></div>
+					<div class="li1"><a class="current">商家资料</a></div>
 				</div>
 				<div class="partinput">
 				<table class="formlogin" cellpadding="0" cellspacing="0">
             <tr>
-				<td class="tdright"><font color=red>*</font>机构名称：</td>
-				<td><input type="text" name="tname" class="input input-large" require="true" datatype="limit" min="1" msg="机构名称不能为空！"/>
+				<td class="tdright"><font color=red>*</font>商家名称：</td>
+				<td><input type="text" name="tname" class="input input-large" require="true" datatype="limit" min="1" msg="商家名称不能为空！"/>
 				</td>
 			</tr>
             <tr>
@@ -116,8 +123,8 @@
 				<td class="catid">{$get_member_cat}</td>
 			</tr>
 			<tr>
-				<td class="tdright" valign="top"><font color=red>*</font>机构简介：</td>
-				<td><textarea name="introduce" style="width:260px; height:300px;"  require="true" datatype="limit" msg="请填写机构简介" class="input"></textarea>
+				<td class="tdright" valign="top"><font color=red>*</font>商家简介：</td>
+				<td><textarea name="introduce" style="width:260px; height:300px;"  require="true" datatype="limit" msg="请填写商家简介" class="input"></textarea>
 				</td>
 			</tr>
             <tr>
@@ -137,7 +144,7 @@
 			</tr>
             <tr>
 				<td class="tdright"><font color=red>*</font>联系地址：</td>
-				<td><input type="text" name="address" class="input input-large" require="true" datatype="limit" min="1" msg="请填写机构地址"/>
+				<td><input type="text" name="address" class="input input-large" require="true" datatype="limit" min="1" msg="请填写商家地址"/>
 				</td>
 			</tr>
             </tbody>

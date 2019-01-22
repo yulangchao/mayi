@@ -37,10 +37,10 @@ if($dopost == 1){
         }
         break;
     case 'editbase': if($if_corp == 1){
-            empty($tname) && redirectmsg('请填写机构名称', 'javascript:history.back();');
+            empty($tname) && redirectmsg('请填写商家名称', 'javascript:history.back();');
             empty($tel) && redirectmsg('请填写固话号码', 'javascript:history.back();');
             empty($address) && redirectmsg('请填写联系地址', 'javascript:history.back();');
-            empty($introduce) && redirectmsg('请填写机构简介', 'javascript:history.back();');
+            empty($introduce) && redirectmsg('请填写商家简介', 'javascript:history.back();');
             if(is_array($catid)){
                 mymps_delete('member_category', "WHERE userid = '$s_uid'");
                 foreach($catid as $kids => $vids){
@@ -55,7 +55,7 @@ if($dopost == 1){
             $cname = $cname ? ",cname='$cname'":"";
             $db -> query("UPDATE `{$db_mymps}member` SET mobile='$mobile',email='$email',qq='$qq',tel='$tel',address='$address',catid='$catids',cityid='$cityid',areaid='$areaid',streetid='$streetid',introduce='$introduce'{$tname}{$cname} WHERE userid = '$s_uid'");
             if($type == 'reg'){
-                redirectmsg('机构资料提交成功！', 'index.php?mod=member');
+                redirectmsg('商家资料提交成功！', 'index.php?mod=member');
                 exit;
             }
         }else{
@@ -302,10 +302,10 @@ if($dopost == 1){
         }
         break;
     case 'upgradecorp': if($row['if_corp'] == 1){
-            redirectmsg('您已经是机构会员了', 'index.php?mod=member&action=editbase');
+            redirectmsg('您已经是商家会员了', 'index.php?mod=member&action=editbase');
         }else{
             $db -> query("UPDATE `{$db_mymps}member` SET if_corp = '1',status = '0' WHERE userid = '$s_uid'");
-            redirectmsg('您已成为机构会员，请完善机构信息以通过审核', 'index.php?mod=member&action=editbase');
+            redirectmsg('您已成为商家会员，请完善商家信息以通过审核', 'index.php?mod=member&action=editbase');
         }
         break;
     }

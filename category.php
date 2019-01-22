@@ -119,6 +119,7 @@ $idin = get_page_idin("id","SELECT a.id FROM `{$db_mymps}information` AS a {$s}{
 $sql = "SELECT a.id,a.tel,a.title,a.cityid,a.userid,a.contact_who,a.content,a.img_path,a.img_count,a.upgrade_type,a.upgrade_type_list,a.upgrade_time,a.upgrade_time_list,a.upgrade_time_index,a.begintime,a.endtime,a.info_level,a.certify,a.ifred,a.ifbold,a.dir_typename,a.contact_who,b.areaname FROM {$db_mymps}information AS a LEFT JOIN `{$db_mymps}area` AS b ON a.areaid = b.areaid WHERE a.id IN ($idin) {$orderby}";
 $info_list = array();
 $page1 = $idin ? $db -> getAll($sql) : array();
+
 foreach($page1 as $key => $val){
 	$infolist['id']				= $val['id'];
 	$infolist['begintime']		= $val['begintime'];
@@ -142,6 +143,7 @@ foreach($page1 as $key => $val){
 	if($val['upgrade_time_list'] > 0 && $val['upgrade_time_list'] < $timestamp) $db->query("UPDATE `{$db_mymps}information` SET upgrade_type_list = '1',upgrade_time_list = '0' WHERE id ='$val[id]'");
 	if($val['upgrade_time_index'] > 0 && $val['upgrade_time_index'] < $timestamp) $db->query("UPDATE `{$db_mymps}information` SET upgrade_type_index = '1',upgrade_time_index = '0' WHERE id ='$val[id]'");
 }
+
 $idin = $ids ? " AND a.id IN ($idin) " : "";
 $pageline = NULL;
 $pageview	= page2($rewrite);
@@ -374,6 +376,8 @@ if($cat['template'] == 'list'){
 		}
 	}
 }
+// echo json_encode($info_list);
+// return;
 include mymps_tpl($cat['template'] ? $cat['template'] : 'list');
 is_object($db) && $db->Close();
 $cachetime && $cachepages->caching();

@@ -42,7 +42,7 @@
 								var sPageURL = decodeURIComponent(window.location.search.substring(1)),
 										sURLVariables = sPageURL.split('&'),
 										sParameterName,
-										i;
+										i;  
 
 								for (i = 0; i < sURLVariables.length; i++) {
 										sParameterName = sURLVariables[i].split('=');
@@ -57,11 +57,17 @@
 							$('input[name=payment_type]').click(function(){
 								
 								if ($('input[name=payment_type]:checked').val() == 1){
-									$('#credit-card').hide();
+                                    $('#credit-card').hide();
+                                    $('#wechat').hide();
 									$('#alipay').show();
-								} else{
+								} else if ($('input[name=payment_type]:checked').val() == 2){
 									$('#credit-card').show();
-									$('#alipay').hide();
+                                    $('#alipay').hide();
+                                    $('#wechat').hide();
+								} else{
+									$('#credit-card').hide();
+                                    $('#alipay').hide();
+                                    $('#wechat').show();
 								}
 							})
 							
@@ -90,7 +96,31 @@
 									}
 								});
 							}
-							
+                            
+							if (getUrlParameter('money')&&getUrlParameter('source')&&getUrlParameter('type')==3){
+								$.ajax({
+									type: "POST",
+									url: 'https://beimei.online/member/index.php?m=pay&ac=pay',
+									data: {
+										 'money': getUrlParameter('money'),
+										 'source':getUrlParameter('source'),
+										 'type':'微信',
+									},
+									success: function (response) {
+											
+										if(response == "succeeded"){
+											alert('支付成功，支付金额'+getUrlParameter('money')/100 + 'Cad');
+											location.href='/member/index.php?m=pay&ac=record';
+										}else{
+											alert('支付失败');
+											location.href='/member/index.php?m=pay&ac=pay';
+										}
+									},
+									error: function () {
+											alert("error");
+									}
+								});
+							}
 							
 							
 							var stripe = Stripe('pk_live_omT4MMJ9wFAoVxRwg07O70t1');
@@ -133,7 +163,7 @@
 							});
 							
 							   $("#payment-form").submit(function(event) {
-                    event.preventDefault();
+                                     event.preventDefault();
 									  var amount = $('#payvalue').val();
 									  var type = $('input[name=payment_type]:checked').val();
 									  if(type ==1){
@@ -149,6 +179,22 @@
 														
 
 														location.href=result['source']['redirect']['url'];
+
+															//stripeResponseHandler('',result['source']);
+													});
+										}else if(type ==3){
+													stripe.createSource({
+														type: 'wechat',
+														amount: amount*100,
+														currency: 'cad',
+														redirect: {
+															return_url: 'https://beimei.online/member/index.php?m=pay&type=user&type=3&money='+amount*100,
+														},
+													}).then(function(result) {
+														// handle result.error or result.source
+														
+
+														console.log(result);
 
 															//stripeResponseHandler('',result['source']);
 													});
@@ -262,6 +308,9 @@
 																							<div class="radio" style="width:100px; float:left">
 																								<label><input type="radio" name="payment_type" value=1 checked="checked">支付宝</label>
 																							</div>
+																							<!-- <div class="radio" style="width:100px; float:left">
+																								<label><input type="radio" name="payment_type" value=3>微信</label>
+																							</div> -->
 																							<div class="radio" style="width:100px; float:left">
 																								<label><input type="radio" name="payment_type" value=2>信用卡</label>
 																							</div>
@@ -270,18 +319,21 @@
 																					<div id="alipay" style="margin-top:60px">
 																					  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEdo76SRLO8JGYkqlendOAP32PqcngWHEaePqDk3hgZGDnhx3O">
 																					</div>
+																					<div id="wechat" style="margin-top:60px">
+																					  wechat
+																					</div>
 																					<div id="credit-card" style="display:none;margin-top:60px">
-  <div class="form-row">
-    <label for="card-element">
-      Credit or debit card
-    </label>
-    <div id="card-element">
-      <!-- A Stripe Element will be inserted here. -->
-    </div>
+                                                                                        <div class="form-row">
+                                                                                            <label for="card-element">
+                                                                                            Credit or debit card
+                                                                                            </label>
+                                                                                            <div id="card-element">
+                                                                                            <!-- A Stripe Element will be inserted here. -->
+                                                                                            </div>
 
-    <!-- Used to display form errors. -->
-    <div id="card-errors" role="alert"></div>
-  </div>
+                                                                                            <!-- Used to display form errors. -->
+                                                                                            <div id="card-errors" role="alert"></div>
+                                                                                        </div>
 																					</div>
 																					
 																					

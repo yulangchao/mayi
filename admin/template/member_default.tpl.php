@@ -107,7 +107,7 @@ $(function(){
       <td width="30">选择</td>
       <td width="30">编号</td>
       <td>用户名</td>
-      <? if($if_corp == 1){?><td>机构名称</td><? }?>
+      <? if($if_corp == 1){?><td>商家名称</td><? }?>
       <td width="100">认证情况</td>
       <td width="100">用户组</td>
       <td width="100">注册地IP</td>

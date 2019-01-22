@@ -2,7 +2,7 @@
 <html lang="zh-CN" class="index_page">
 <head>
 	{template header}
-	<title>{echo $type=='reg'?'填写机构资料':'完善资料'} - {$mymps_global[SiteName]}</title>
+	<title>{echo $type=='reg'?'填写商家资料':'完善资料'} - {$mymps_global[SiteName]}</title>
 	<link type="text/css" rel="stylesheet" href="template/css/global.css">
 	<link type="text/css" rel="stylesheet" href="template/css/style.css">
 	<link type="text/css" rel="stylesheet" href="template/css/member_new.css">
@@ -40,7 +40,7 @@
 			return false;
 		}
 		if($("#tname").val()==''){
-			alert('请输入机构名称！');
+			alert('请输入商家名称！');
 			$("#tname").focus();
 			return false;
 		}
@@ -55,7 +55,7 @@
 			return false;
 		}
 		if($("#introduce").val()==''){
-			alert('请输入机构简介！');
+			alert('请输入商家简介！');
 			$("#introduce").focus();
 			return false;
 		}
@@ -71,7 +71,7 @@
 	
 	<div class="dl_nav">
 		<span>
-			<a href="index.php">首页</a>&gt;<a href="index.php?mod=member">会员中心</a>&gt;{echo $type=='reg'?'填写机构资料':'完善资料'}
+			<a href="index.php">首页</a>&gt;<a href="index.php?mod=member">会员中心</a>&gt;{echo $type=='reg'?'填写商家资料':'完善资料'}
 		</span>
 	</div>
 	<div style="display:none;">
@@ -84,7 +84,7 @@
     <div class="tabItem tab-cont" style="display:block;">
      <div class="inp_Itembox">
       <dl class="cfix">
-       <dt>{echo $row[if_corp] == 1 ? '机构' : '用户';}头像</dt>
+       <dt>{echo $row[if_corp] == 1 ? '商家' : '用户';}头像</dt>
 	   {php $row[prelogo] = strstr($row[prelogo],'http') ? $row[prelogo] : $mymps_global[SiteUrl].$row[prelogo];}
        <dd><img src="{echo $row[prelogo] ? $row[prelogo] : 'template/images/center_ico.png'}" id="Image1"  width="60" height="60" /> <a href="index.php?mod=member&action=upface" style="color:#36c; float:right;">修改</a></dd>
       </dl>
@@ -98,7 +98,7 @@
       </dl>
       <dl class="cfix">
        <dt>会员类型</dt>
-       <dd> {if !$row[if_corp]}个人会员<a href="index.php?mod=member&action=upgradecorp" class="upjibie1" style="color:#36c; float:right;" onClick="return window.confirm('您确定申请升级成为机构会员吗？');">申请升级机构会员</a>{else}机构会员{/if}</dd>
+       <dd> {if !$row[if_corp]}个人会员<a href="index.php?mod=member&action=upgradecorp" class="upjibie1" style="color:#36c; float:right;" onClick="return window.confirm('您确定申请升级成为商家会员吗？');">申请升级商家会员</a>{else}商家会员{/if}</dd>
       </dl>
       <dl class="cfix">
        <dt>电子邮件</dt>
@@ -141,8 +141,8 @@
        </div>
       </dl>
       <dl class="cfix">
-       <dt><font color="red">*</font>机构名称</dt>
-       <dd><input id="tname" type="text" name="tname" value="{$row[tname]}" placeholder="输入机构名称" /></dd>
+       <dt><font color="red">*</font>商家名称</dt>
+       <dd><input id="tname" type="text" name="tname" value="{$row[tname]}" placeholder="输入商家名称" /></dd>
       </dl>
        <dl class="cfix">
        <dt>联系人</dt>
@@ -150,15 +150,15 @@
       </dl>
       <dl class="cfix">
        <dt><font color="red">*</font>联系地址</dt>
-       <dd><input id="address" type="text" name="address" value="{$row[address]}" placeholder="输入机构地址" /></dd>
+       <dd><input id="address" type="text" name="address" value="{$row[address]}" placeholder="输入商家地址" /></dd>
       </dl>
       <dl class="cfix">
        <dt><font color="red">*</font>固定电话</dt>
        <dd><input id="tel" type="text" name="tel" value="{$row[tel]}" placeholder="输入固话号码" /></dd>
       </dl>
       <dl class="cfix">
-       <dt><font color="red">*</font>机构简介</dt>
-       <dd><textarea id="introduce" name="introduce" class="qita" placeholder="输入机构简介" rows="6">{$row[introduce]}</textarea></dd>
+       <dt><font color="red">*</font>商家简介</dt>
+       <dd><textarea id="introduce" name="introduce" class="qita" placeholder="输入商家简介" rows="6">{$row[introduce]}</textarea></dd>
       </dl>
      </div>
     {/if}

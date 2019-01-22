@@ -46,7 +46,7 @@ if($id) {
 	$advertisement			= $advertisement['all'];
 	
 	$news['keywords']	 = $news['keywords'] ? $news['keywords'] : $news['title'];
-	$news['description'] = mhtmlspecialchars(substring(clear_html($news['content']),0,250));
+	$news['description'] = mhtmlspecialchars(substring(strip_tags($news['content']),0,250));
 	
 	$news['content'] = replace_insidelink($news['content'],'news');
 	
@@ -77,7 +77,8 @@ if($id) {
 		$arr['hit']  		= $r['hit'];
 		$arr['title']  	    = $r['title'];
 		$arr['iscommend']  	= $r['iscommend'];
-		$arr['content'] 	= clear_html($r['content']);
+// 		$arr['content'] 	= clear_html($r['content']);
+		$arr['content'] 	= strip_tags($r['content']);
 		$arr['uri']	  	  	= $r['isjump'] ? $r['redirect_url'] : Rewrite('news',array('id'=>$r['id'],'cityid'=>$r['cityid']));
 		$arr['imgpath'] 	= $r['imgpath'];
 		$news[]			  	= $arr;

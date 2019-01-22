@@ -16,6 +16,20 @@
 <link rel="stylesheet" href="<?=$mymps_global['SiteUrl']?>/template/default/css/index.css" />
 <script src="<?=$mymps_global['SiteUrl']?>/template/default/js/global.js" type="text/javascript"></script>
 <script src="<?=$mymps_global['SiteUrl']?>/template/default/js/jquery-1.11.min.js" type="text/javascript"></script>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-3402764854341410",
+    enable_page_level_ads: true
+  });
+</script>
+    <style>
+    .full .infolist .sleft, .full .infolist .sright {
+        width: 491px;
+      float:right;
+      margin-right:10px;
+    }
+  </style>
 </head>
 
 <body class="<?=$mymps_global['cfg_tpl_dir']?> full bodybg<?=$mymps_global['cfg_tpl_dir']?><?=$mymps_global['bodybg']?>"><script type="text/javascript">var current_domain="<?=$mymps_global['SiteUrl']?>";var current_cityid="<?=$city['cityid']?>";var current_logfile="<?=$mymps_global['cfg_member_logfile']?>";</script>
@@ -61,8 +75,8 @@
             <ul>
                 <li name="s8" id="s8_information" onclick="show_tab('information');" class="current"><a href="javascript:void(0);">信息</a></li>
 <li name="s8" id="s8_store" onclick="show_tab('store');" ><a href="javascript:void(0);">商家</a></li>
-                <li name="s8" id="s8_news" onclick="show_tab('news');" ><a href="javascript:void(0);">资讯</a></li>
-                <li name="s8" id="s8_goods" onclick="show_tab('goods');" ><a href="javascript:void(0);">商品</a></li>
+<!--                 <li name="s8" id="s8_news" onclick="show_tab('news');" ><a href="javascript:void(0);">资讯</a></li>
+                <li name="s8" id="s8_goods" onclick="show_tab('goods');" ><a href="javascript:void(0);">商品</a></li> -->
             </ul>
         </div>
         <div class="clearfix"></div>
@@ -154,7 +168,7 @@
                             <div id="tab1">
                                 <ul>
                                     <li onmouseover="setTab(1,0)" class="now">首页置顶</li>
-                                    <li onmouseover="setTab(1,1)">热点资讯</li>
+                                    <li onmouseover="setTab(1,1)">最新信息</li>
                                     <li onmouseover="setTab(1,2)">网站公告</li>
                                 </ul>
                             </div>
@@ -168,14 +182,16 @@
                                     <?php }} ?>
                                     </ul>
                                 </div>
-                                <div class="tablist none corp">
+                            	<div class="tablist none corp">
                                     <ul>
-                                    <?php if(ifplugin('news')) $news = mymps_get_news(7,NULL,NULL,NULL,NULL,NULL,$cityid); ?>                                    <?php if(is_array($news)){foreach($news as $mymps) { ?>                                    <li><span class="title"><a target="_blank" href="<?=$mymps['uri']?>" title="<?=$mymps['title']?>" <? if($mymps['iscommend'] ==1) { ?>style="color:red"<?php } ?>><? echo cutstr($mymps['title'],42); ?></a></span><span class="time">[<? echo GetTime($mymps['begintime'],'m-d'); ?>]</span></li>
+                                    <?php $index_topinfo = mymps_get_infos(7,NULL,NULL,NULL,NULL,NULL,NULL,NULL,$cityid); ?>                                    <?php if(is_array($index_topinfo)){foreach($index_topinfo as $mymps) { ?>                                    <li><span class="title"><a target="_blank" href="<?=$mymps['uri']?>" title="<?=$mymps['title']?>" style="<? if($mymps['ifred'] ==1) { ?>color:red;<?php } if($mymps['ifbold'] ==1) { ?>font-weight:bold;<?php } ?>"><? echo cutstr($mymps['title'],42); ?></a></span><span class="money" title="<?=$mymps['catname']?>"><?=$mymps['catname']?></span></li>
                                     <?php }} else {{ ?>
                                     <div class="nodata">暂无相关记录！</div>
                                     <?php }} ?>
                                     </ul>
                                 </div>
+                              
+
                                 <div class="tablist none announce">
                                     <ul>
                                     <?php if(is_array($announce)){foreach($announce as $k => $mymps) { ?>                                    <li><span class="announcetitle"><a style="color:<?=$mymps['titlecolor']?>" title="<?=$mymps['title']?>" href="<?=$mymps['uri']?>" target="_blank"><?=$mymps['title']?></a></span><span class="announcetime">[<? echo GetTime($mymps['begintime'],'m-d'); ?>]</span></li>
@@ -223,11 +239,37 @@
 
         <div class="clearfix"></div>
 <div class="infolist">
+          <dl id="infomenu">
+            <dt class="titup" style="background:none;background-color:#C40000"><b>本地服务</b></dt>
+            <dd class="cont">
+            <ul>
+                 <?php if(is_array($lifebox)){foreach($lifebox as $k => $mymps) { ?>                <li><em><a rel="nofollow" href="<?=$mymps_global['SiteUrl']?>/lifebox.php?id=<?=$mymps['id']?>" target="_blank"><?=$mymps['lifename']?></a></em></li>
+                <?php }} ?>                                                                                                     
+            </ul>
+            </dd>
+            <dt class="titup" style="background:none;background-color:#C40000"><b>常用查询工具</b></dt>
+            <dd class="cont">
+            <ul>
+                <li>
+                    <em><a href="http://finance.sina.com.cn/money/forex/hq/CADCNY.shtml" style="color:" target="_blank">汇率查询</a></em>
+                </li>                                                                                                                       
+                <li>
+                    <em><a href="https://www.theweathernetwork.com/ca/weather/british-columbia/vancouver" style="color:" target="_blank">天气查询</a></em>
+                </li>
+                <li>
+                    <em><a href="https://www.statutoryholidays.com/2018.php" style="color:" target="_blank">公共假期</a></em>
+                </li>    
+                <li>
+                    <em><a href="http://www.wealthchinese.ca/mortgage/calculator_your_pay.html" style="color:" target="_blank">贷款计算器</a></em>
+                </li>      
+            </ul>
+            </dd>
+        </dl>
         <?php $i=1; ?>        <?php if(is_array($index_cat)){foreach($index_cat as $fcat) { ?>        <? if($i < $tpl_index['classic']['cats']) { ?>
         <? if($i%2 != 0) { ?><div id="bm_indexcatad_<?=$fcat['catid']?>"></div><?php } ?>
         <div class="showbox <? if($i%2 != 0) { ?>sleft<?php } else { ?>sright<?php } ?>">
             <div class="hd">
-                <div class="cattitle"><? if($fcat['icon']) { ?><img alt="<?=$fcat['catname']?>" src="<?=$mymps_global['SiteUrl']?><?=$fcat['icon']?>" align="absmiddle"/>&nbsp;&nbsp;<?php } ?><?=$fcat['catname']?>信息</div>
+                <a href="<?=$fcat['uri']?>" target="_blank"><div class="cattitle"><? if($fcat['icon']) { ?><img alt="<?=$fcat['catname']?>" src="<?=$mymps_global['SiteUrl']?><?=$fcat['icon']?>" align="absmiddle"/>&nbsp;&nbsp;<?php } ?><?=$fcat['catname']?>信息</div></a>
                 <div class="postinfo"></div>
                 <div class="moreinfo"><a href="<?=$mymps_global['SiteUrl']?>/<?=$mymps_global['cfg_postfile']?>?catid=<?=$fcat['catid']?>" target="_blank">发信息</a> | <a href="<?=$fcat['uri']?>" target="_blank">更多</a></div>
             </div>
@@ -242,9 +284,11 @@
                 </ul>
             </div>
         </div>
+        
         <? if($i%2 == 0) { ?><div id="bm_indexcatad_<?=$fcat['catid']?>"></div><?php } ?>
         <?php } ?>
-        <?php $i++; ?>        <?php }} ?>
+        <?php $i++; ?>      
+        <?php }} ?>
 </div><?php if(ifplugin('goods')){$goods = mymps_get_goods($tpl_index['goods'],1,NULL,NULL,NULL,NULL,$cityid); ?>        <div class="clearfix"></div>
 <div class="goods">
         	<div class="ul">
@@ -304,7 +348,7 @@
         <div class="hd"><span class="hdleft">友情链接</span><span class="hd2"><a href="<?=$about['friendlink_uri']?>">我要申请</a></span></div>
         <div class="bd">
 <? if($friendlink['img']) { ?>
-<ul class="image"><?php if(is_array($friendlink['img'])){foreach($friendlink['img'] as $mymps) { ?><li><a href="<?=$mymps['url']?>" target="_blank" title="<?=$mymps['name']?>"><img src="<?=$mymps_global['SiteUrl']?><?=$mymps['logo']?>" border="0" /></a></li>
+<ul class="image"><?php if(is_array($friendlink['img'])){foreach($friendlink['img'] as $mymps) { ?><li><a href="<?=$mymps['url']?>" target="_blank" title="<?=$mymps['name']?>"><img src="<?=$mymps['logo']?>" border="0" /></a></li>
 <?php }} ?>
 </ul>
 <?php } ?>

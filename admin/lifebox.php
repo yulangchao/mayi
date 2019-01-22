@@ -55,7 +55,7 @@ else
             $typeid = mhtmlspecialchars( trim( $newtypeid[$key] ) );
             $displayorder = mhtmlspecialchars( trim( $newdisplayorder[$key] ) );
             $if_view = mhtmlspecialchars( trim( $newif_view[$key] ) );
-            if ( !$lifename && !$lifeurl )
+            if ( $lifename && $lifeurl )
             {
                 $db->query( "INSERT `".$db_mymps."lifebox` (lifename,lifeurl,typeid,cityid,displayorder,if_view)VALUES('{$lifename}','{$lifeurl}','{$typeid}','{$cityid}','{$displayorder}','{$if_view}')" );
             }

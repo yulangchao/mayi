@@ -7,7 +7,13 @@
 	<link type="text/css" rel="stylesheet" href="template/css/style.css">
     <link type="text/css" rel="stylesheet" href="template/css/news.css">
     <script>window['current'] = '{$news[catname]}';</script>
-    <style>#resizeIMG img{max-width:100%}</style>
+    <style>#resizeIMG img{max-width:100%}
+			.article_content img{
+				width: auto !important;
+				height: auto !important;
+			}
+	
+	 </style>
     <base href="{$mymps_global[SiteUrl]}" />
 </head>
 
@@ -36,7 +42,7 @@
         </script> -->
         </div>
         <div class="inner_html shengming">声明：频道所载文章、图片、数据等内容以及相关文章评论纯属个人观点和网友自行上传，并不代表本站立场。如发现有违法信息或侵权行为，请留言或直接与本站管理员联系，我们将在收到您的信息后24小时内作出删除处理。</div>
-        <div class="inner_html"><a href="index.php?mod=news&cityid={$cityid}&catid={$news[catid]}" class="comn-submit gray btn_block">返回{$news[catname]}频道<span class="jian"></span></a></div>
+        <div class="inner_html"><a href="m/index.php?mod=news&cityid={$cityid}&catid={$news[catid]}" class="comn-submit gray btn_block">返回{$news[catname]}频道<span class="jian"></span></a></div>
         <div class="mod_01">
             <div class="hd">精彩推荐</div>
             <div class="bd">

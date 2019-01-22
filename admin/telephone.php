@@ -39,7 +39,7 @@ else
             $if_view = mhtmlspecialchars( trim( $newif_view[$key] ) );
             $if_bold = mhtmlspecialchars( trim( $newif_bold[$key] ) );
             $cityid = intval( $newcityid[$key] );
-            if ( !$telname && !$telnumber )
+            if ( $telname && $telnumber )
             {
                 $db->query( "INSERT `".$db_mymps."telephone` (telname,telnumber,color,if_bold,displayorder,if_view,cityid) VALUES ('{$telname}','{$telnumber}','{$color}','{$if_bold}','{$displayorder}','{$if_view}',{$cityid})" );
             }
